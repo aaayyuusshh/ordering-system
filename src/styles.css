@@ -10,6 +10,7 @@ a {
     color: inherit;
 }
 
+
 .navBar {
     background-color: rgb(221, 221, 221);
     /* padding-bottom: 100px;   */
@@ -79,4 +80,29 @@ a {
     color: white;
     font-size: 20px;
     margin-right: 20px;
+}
+
+.landingSection {
+  background-image: url('img/landingPageImg.webp');
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 162px); /* Subtract the height of the navigation bar */
+  overflow: hidden;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.sloganContainer {
+    position: relative;
+    left: 22%;
+    top: 40%;
+}
+
+.mainSlogan {
+    font-size: 65px;
+}
+
+.secondarySlogan {
+    font-size: 23px;
+    color: rgb(143, 143, 143);
 }
