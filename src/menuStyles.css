@@ -1,0 +1,36 @@
+.menuTitleContainer {
+    /* background-color: rgb(229, 140, 140); */
+    margin-top: 30px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ourMenuTitle {
+    font-size: 65px;
+}
+
+.menuDescription {
+    font-size: 17px;
+    margin: 7px 0px 40px 0;
+}
+
+.dishCategoryContainer {
+    display: flex;
+}
+
+.dishCategoryButton {
+    padding: 13px 40px;
+    margin-right: 35px;
+    border-radius: 20px;
+    border: 1px solid black;
+    background-color: white;
+    font-size: 15px;
+}
+
+#dishCategoryButton1 {
+    background-color: rgb(199, 20, 20);
+    color: white;
+    border: none;
+}
