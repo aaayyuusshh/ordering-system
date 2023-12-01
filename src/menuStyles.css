@@ -66,6 +66,22 @@
     background-image: url(https://lh4.googleusercontent.com/vkwS61KP7i4f3xI0lS50mpyFcWmAeTdmOx9URkKNZwbtqIw1R533LS0YpiH2vzSzCjQ7xUrrQGBYA8UqC5ATIPm-aMbAHGMgtos7Fi1h_X0emLXO9-54YxXOH_pQ6CVUp1-j10W1);
 }
 
+.dishGridRow2 .imgDiv1 {
+    background-image: url(https://www.jocooks.com/wp-content/uploads/2023/08/teriyaki-chicken-1-4-730x913.jpg);
+}
+
+.dishGridRow2 .imgDiv2 {
+    background-image: url(https://www.dadwithapan.com/cdn-cgi/image/width=584,height=875,fit=crop,quality=80,format=auto,onerror=redirect,metadata=none/wp-content/uploads/2022/09/Chicken-Chow-Mein-From-Wok-03.jpg);
+}
+
+.dishGridRow2 .imgDiv3 {
+    background-image: url(https://hips.hearstapps.com/del.h-cdn.co/assets/17/09/2560x1706/gallery-1488466253-sesame-ginger-beef-stir-fryl5.jpg?resize=1200:*);
+}
+
+.dishGridRow2 .imgDiv4 {
+    background-image: url(https://www.elmundoeats.com/wp-content/uploads/2022/01/Spicy-ramen-with-chicken-katsu-in-a-bowl-view-from-top.jpg);
+}
+
 .imgDiv {
     background-size: cover;
     background-position: center;
@@ -95,4 +111,8 @@
 
 .dishTextDiv {
     margin-left: 10px;
+}
+
+.dishGridRow2 {
+    margin: 25px 0;
 }
