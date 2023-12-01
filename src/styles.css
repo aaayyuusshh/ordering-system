@@ -106,3 +106,170 @@ a {
     font-size: 23px;
     color: rgb(143, 143, 143);
 }
+
+
+
+/* ITEM SCREEN*/
+.itemContainer {
+    margin-left: 100px;
+    margin-top: 50px;
+    column-gap: 5px;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+.itemImage {
+    object-fit: cover;
+    width: 450px;
+    height: 450px;
+    border-radius: 30px;
+    float: left;
+}
+
+.itemDetails {
+    float: left;
+    margin-left: 50px;
+    padding-left: 20px;
+    padding-top: 20px;
+   
+
+}
+
+.itemTitle {
+    font-size: 50px; 
+    text-align: center; 
+    margin-left: 200px;
+    margin-bottom: 10px; 
+}
+
+.itemPrice{
+    color: darkred;
+    text-align: center; 
+    margin-left: 200px;
+    font-size: 40px; 
+    margin-bottom: 10px; 
+}
+
+.itemDescription{
+    text-align: center; 
+    margin-left: 200px;
+    font-size: 25px; 
+    margin-bottom: 10px; 
+}
+
+
+
+.quantityControls {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-left: 500px; 
+}
+
+.quantityButton {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 0 10px;
+    margin-bottom: 10px;
+}
+
+.quantityMinusButton {
+    
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    margin: 0 10px;
+    margin-bottom: 10px;
+}
+
+.quantityInput {
+    width: 50px;
+    text-align: center;
+    font-size: 40px;
+    margin: 0 10px;
+    margin-bottom: 10px; 
+}
+
+.specialInstructionsLabel {
+    display: block;
+    font-size: 20px;
+    margin-top: 10px;
+    margin-left: 200px; 
+    font-style: italic;
+}
+
+.specialInstructions {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 16px;
+    margin-left: 200px; 
+    background-color: cornsilk;
+}
+
+.addToCart {
+    margin-top: 20px; 
+    margin-bottom: 50px; 
+    font-weight: bolder;
+    height: 60px;
+    padding: 0px 50px;
+    border-radius: 20px;
+    border: 0px solid white;
+    background-color: rgb(48,48,48);
+    color: white;
+    font-size: 30px;
+    text-align: center; 
+    margin-left: 450px; 
+    margin-right: auto; 
+    display: block; 
+}
+
+
+h2 {
+    font-size: 45px;
+    text-align: center; 
+    
+}
+
+.nutritionalSubsection h3 {
+    font-size: 30px  !important;
+    text-align: center; 
+}
+
+
+.nutritionalInformation {
+    margin-top: 20px;
+}
+
+.nutritionalSubsection {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.nutritionalSubsection h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.nutritionalSubsection .hiddenInformation {
+    display: none;
+    margin-top: 10px;
+}
+
+.nutritionalSubsection.active .hiddenInformation {
+    display: block;
+}
+
+.hiddenInformation{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.separator {
+    margin-top: 20px; 
+    border: 1px solid #ccc; 
+}
