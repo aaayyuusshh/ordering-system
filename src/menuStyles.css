@@ -1,7 +1,6 @@
 .menuTitleContainer {
     /* background-color: rgb(229, 140, 140); */
     margin-top: 30px;
-    height: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -13,11 +12,13 @@
 
 .menuDescription {
     font-size: 17px;
-    margin: 7px 0px 40px 0;
+    margin: 10px 0px 50px 0;
+    color: rgb(106, 106, 106);
 }
 
 .dishCategoryContainer {
     display: flex;
+    margin-bottom: 50px;
 }
 
 .dishCategoryButton {
@@ -33,4 +34,65 @@
     background-color: rgb(199, 20, 20);
     color: white;
     border: none;
+}
+
+.dishGrid {
+    
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.dishItem {
+    width: 330px;
+    height: 350px;
+    background-color: rgb(235, 235, 235);
+    border-radius: 15px;
+    /* margin-left: 10px; */
+}
+
+.imgDiv1 {
+    background-image: url(https://lh5.googleusercontent.com/I1JY1xzIUNTofFG5blyrT0NWD-ZiHwbMvxNtNRop_YT5xo_Pz-10wzQQ_BY90Ukrj1Kjwdt0z6aAE2woGrbpGP4xQxGXLdT5zxN2KldDXNKN-iMr60H7iH5KieDNvns6cjvAxD-i=s0);
+}
+
+.imgDiv2 {
+    background-image: url(https://minimalistbaker.com/wp-content/uploads/2019/01/Easy-Vegan-Pad-Thai-SQUARE.jpg);
+}
+
+.imgDiv3 {
+   background-image: url(https://i0.wp.com/www.onceuponachef.com/images/2023/02/pho.jpg?resize=760%2C936&ssl=1); 
+} 
+
+.imgDiv4 {
+    background-image: url(https://lh4.googleusercontent.com/vkwS61KP7i4f3xI0lS50mpyFcWmAeTdmOx9URkKNZwbtqIw1R533LS0YpiH2vzSzCjQ7xUrrQGBYA8UqC5ATIPm-aMbAHGMgtos7Fi1h_X0emLXO9-54YxXOH_pQ6CVUp1-j10W1);
+}
+
+.imgDiv {
+    background-size: cover;
+    background-position: center;
+    height: 230px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.dishPrice {
+    color: rgb(199, 20, 20);
+    font-size: 18px;
+}
+
+.dishName {
+    font-weight: bold;
+}
+
+.dishDescription {
+    color: rgb(71, 71, 71);
+}
+
+.dishGrid p {
+    margin-bottom: 6px;
+}
+
+.dishTextDiv {
+    margin-left: 10px;
 }
