@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="itemStyles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>Ordering System</title>
+</head>
+<body>
+    <nav class="navBar">
+        <!-- TOP NAV -->
+        <div class="topNavBarContainer">
+            <ul class="topNavList">
+                <!-- <li>
+                    <div> 
+                        <select name="languages" id="languages">
+                            <option value="en">EN</option>
+                            <option value="fr">FR</option>
+                        </select>
+                    </div>   
+                </li> -->
+                <li>
+                    <div class="topNavListDiv"><p><a href="#">EN (plcehldr)</a></p></div>
+                </li>
+                <li>
+                    <div class="topNavListDiv"><p><a href="#">TRACK ORDER</a></p></div>
+                </li>
+                <li>
+                    <div class="topNavListDiv selectTester"><p><a href="#">VIEW CART</a></p></div>
+                </li>
+                <li>
+                    <div class="topNavListDiv"><p><a href="#">VIEW BILL</a></p></div>
+                </li>
+              
+            </ul>
+        </div>
+
+        <!-- BOTTOM NAV -->
+        <!-- will need to add classes for the p and button as well when styling -->
+        <div class="bottomNavBarContainer">
+            <img src="img/logo.png" width="25%" class= "logoTitle" alt="">
+            <ul class="bottomNavList">
+                <li>Home</li>
+                <li>Menu</li>
+            </ul>
+            <button class="callWaiterButton">Call Waiter</button>
+        </div>
+    </nav>
+
+    <div class="itemContainer">
+        <div class="itemImage">
+            <img src="img/chicken.jpg" width="15%" height="15%" alt="Item Image" class="itemImage">
+        </div>
+    
+        <div class="itemDetails">
+            <h1 class="itemTitle">Honey Garlic Fried Chicken</h1>
+            <p class="itemDescription">Featuring chicken pieces coated in a sweet and tangy honey garlic glaze.</p>
+            <h1 class="itemPrice">$20.99</h1>
+    
+            <!-- Quantity controls  -->
+            <div class="quantityControls">
+                <img src="img/minus.svg" alt="Minus" class="quantityMinusButton">
+                <input type="number" class="quantityInput" value="1" min="1" readonly>
+                <img src="img/add.svg" alt="Plus" class="quantityButton">
+            </div>
+
+            <!-- Label for special instructions -->
+             <label for="specialInstructions" class="specialInstructionsLabel">Special Instructions (Optional)</label>
+
+            <!-- Text area for special instructions -->
+            <textarea id="specialInstructions" class="specialInstructions" placeholder="Type your special instructions here..."></textarea>
+
+            <button class="addToCart">ADD TO CART</button>
+
+            <!-- Nutritional Information -->
+            <div class="nutritionalInformation">
+                <h2>NUTRITIONAL INFORMATION</h2>
+
+                <hr class="separator">
+
+                <!-- Subsection 1: View Ingredients and Allergens -->
+                <div class="nutritionalSubsection" id="viewIngredients">
+                    <h3>View Ingredients and Allergens</h3>
+                    <!-- Hidden information initially -->
+                    <div class="hiddenInformation">
+                        <p>Ingredients:</p>
+                        <ul>
+                            <li>Chicken pieces</li>
+                            <li>All-purpose flour</li>
+                            <li>Eggs</li>
+                            <li>Bread crumbs</li>
+                            <li>Honey</li>
+                            <li>Garlic</li>
+                            <li>Soy sauce</li>
+                            <li>Salt</li>
+                            <li>Pepper</li>
+                            <li>Vegetable oil</li>
+                        </ul>
+                        <p>Allergens:</p>
+                        <p>Contains eggs and soy. May contain traces of nuts.</p>
+                    </div>
+                </div>
+
+                <hr class="separator">
+
+                <!-- Subsection 2: View Nutritional Summary -->
+                <div class="nutritionalSubsection" id="viewNutritionalSummary">
+                    <h3>View Nutritional Summary</h3>
+                    <!-- Hidden information initially -->
+                    <div class="hiddenInformation">
+                        <p>Nutritional Summary (Per Serving):</p>
+                        <ul>
+                            <li>Calories: 450</li>
+                            <li>Total Fat: 25g</li>
+                            <li>Saturated Fat: 5g</li>
+                            <li>Trans Fat: 0g</li>
+                            <li>Cholesterol: 120mg</li>
+                            <li>Sodium: 800mg</li>
+                            <li>Total Carbohydrates: 30g</li>
+                            <li>Dietary Fiber: 2g</li>
+                            <li>Sugars: 10g</li>
+                            <li>Protein: 30g</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ... (remaining HTML) ... -->
+            </div>
+
+            <script>
+                // JavaScript for toggling the hiddenInformation class on click
+                document.addEventListener('DOMContentLoaded', function () {
+                    const subsections = document.querySelectorAll('.nutritionalSubsection');
+
+                    subsections.forEach(function (subsection) {
+                        subsection.addEventListener('click', function () {
+                            // Toggle the active class on the clicked subsection
+                            this.classList.toggle('active');
+                        });
+                    });
+                });
+            </script>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
