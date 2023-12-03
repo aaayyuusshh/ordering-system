@@ -4,56 +4,56 @@ const dishes = [
     {
         category: "Popular",
         price: "$16.99",
-        image: "img/popular1.jpg",
+        image: "https://lh5.googleusercontent.com/I1JY1xzIUNTofFG5blyrT0NWD-ZiHwbMvxNtNRop_YT5xo_Pz-10wzQQ_BY90Ukrj1Kjwdt0z6aAE2woGrbpGP4xQxGXLdT5zxN2KldDXNKN-iMr60H7iH5KieDNvns6cjvAxD-i=s0",
         name: "Black Pepper Chicken & Rice",
         description: "Made with tender chicken marinated in a savory black pepper sauce."
     },
     {
         category: "Popular",
         price: "$15.99",
-        image: "img/popular2.jpg",
+        image: "https://minimalistbaker.com/wp-content/uploads/2019/01/Easy-Vegan-Pad-Thai-SQUARE.jpg",
         name: "Tofu Pad Thai",
         description: "Made with firm tofu, rice noodles, and assorted vegetables."
     },
     {
         category: "Popular",
         price: "$15.25",
-        image: "img/popular3.jpg",
+        image: "https://i0.wp.com/www.onceuponachef.com/images/2023/02/pho.jpg?resize=760%2C936&ssl=1",
         name: "Beef Pho",
         description: "Made with sliced beef in a fragrant, spiced broth."
     },
     {
         category: "Popular",
         price: "$20.99",
-        image: "img/popular4.jpg",
+        image: "https://lh4.googleusercontent.com/vkwS61KP7i4f3xI0lS50mpyFcWmAeTdmOx9URkKNZwbtqIw1R533LS0YpiH2vzSzCjQ7xUrrQGBYA8UqC5ATIPm-aMbAHGMgtos7Fi1h_X0emLXO9-54YxXOH_pQ6CVUp1-j10W1",
         name: "Honey Garlic Fried Chicken",
         description: "Featuring chicken thighs coated in a sweet and tangy honey garlic glaze."
     },
     {
         category: "Popular",
         price: "$18.05",
-        image: "img/popular5.jpg",
+        image: "https://www.jocooks.com/wp-content/uploads/2023/08/teriyaki-chicken-1-4-730x913.jpg",
         name: "Chicken Teriyaki",
         description: "Made with rice, broccoli, and our signature chicken with Teriyaki sauce."
     },
     {
         category: "Popular",
         price: "$18.05",
-        image: "img/popular6.jpg",
+        image: "https://www.dadwithapan.com/cdn-cgi/image/width=584,height=875,fit=crop,quality=80,format=auto,onerror=redirect,metadata=none/wp-content/uploads/2022/09/Chicken-Chow-Mein-From-Wok-03.jpg",
         name: "Chicken Chow Mein",
         description: "Made with our thin noodles, thinly cut chicken breast, and spicy sauce."
     },
     {
         category: "Popular",
         price: "$12.55",
-        image: "img/popular7.jpg",
+        image: "https://hips.hearstapps.com/del.h-cdn.co/assets/17/09/2560x1706/gallery-1488466253-sesame-ginger-beef-stir-fryl5.jpg?resize=1200:*",
         name: "Ginger Beef",
         description: "Stir-fry style beef with ginger and other vegetables."
     },
     {
         category: "Popular",
         price: "$12.99",
-        image: "img/popular8.jpg",
+        image: "https://www.elmundoeats.com/wp-content/uploads/2022/01/Spicy-ramen-with-chicken-katsu-in-a-bowl-view-from-top.jpg",
         name: "Chicken Katsu Ramen",
         description: "Eggs, noodles, and chicken cutlets in a rich broth with other vegetables."
     },    
@@ -61,57 +61,57 @@ const dishes = [
     //appetizers
     {
         category: "Appetizers",
+        price: "$11.99",
+        image: "https://hips.hearstapps.com/hmg-prod/images/spicy-crab-rolls4-1654808938.jpg?crop=0.668xw:1.00xh;0.167xw,0&resize=980:*",
+        name: "Sushi Rolls",
+        description: "Assorted sushi rolls with fresh fish, avocado, and rice, served with soy sauce."
+    },
+    {
+        category: "Appetizers",
+        price: "$9.99",
+        image: "https://www.eatyourselfskinny.com/wp-content/uploads/2023/08/chicken-skewers-5-1024x1536.jpg",
+        name: "Chicken Satay",
+        description: "Grilled chicken skewers served with a flavorful peanut sauce."
+    },
+    {
+        category: "Appetizers",
         price: "$8.99",
-        imageURL: ".com",
+        image: "https://www.sugarsaltmagic.com/wp-content/uploads/2023/01/Chinese-Spring-Rolls-4FEAT-500x500.jpg",
         name: "Spring Rolls",
         description: "Crispy rolls filled with vegetables, served with a sweet dipping sauce."
     }, 
     {
         category: "Appetizers",
-        price: "$7.99",
-        image: "img/asian_appetizer2.jpg",
-        name: "Edamame",
-        description: "Steamed soybeans sprinkled with sea salt, a classic appetizer."
-    },
-    {
-        category: "Appetizers",
         price: "$9.99",
-        image: "img/asian_appetizer3.jpg",
+        image: "https://cardamommagazine.com/wp-content/uploads/2021/04/chicken-gyoza.jpg",
         name: "Gyoza",
         description: "Pan-fried Japanese dumplings filled with a savory mixture of pork and vegetables."
     },
     {
         category: "Appetizers",
         price: "$10.99",
-        image: "img/asian_appetizer4.jpg",
+        image: "https://twosleevers.com/wp-content/uploads/2023/03/Shrimp-Tempura-1-900x900.png",
         name: "Shrimp Tempura",
         description: "Crispy shrimp tempura served with a light dipping sauce."
     },
     {
         category: "Appetizers",
         price: "$8.49",
-        image: "img/asian_appetizer5.jpg",
+        image: "https://www.feastingathome.com/wp-content/uploads/2022/01/Miso-Soup-18.jpg",
         name: "Miso Soup",
         description: "Traditional Japanese soup made with fermented soybean paste, tofu, and seaweed."
     },
     {
         category: "Appetizers",
-        price: "$11.99",
-        image: "img/asian_appetizer6.jpg",
-        name: "Sushi Rolls",
-        description: "Assorted sushi rolls with fresh fish, avocado, and rice, served with soy sauce and pickled ginger."
-    },
-    {
-        category: "Appetizers",
-        price: "$9.99",
-        image: "img/asian_appetizer7.jpg",
-        name: "Chicken Satay",
-        description: "Grilled chicken skewers served with a flavorful peanut sauce."
+        price: "$7.99",
+        image: "https://masalaeatsmiami.files.wordpress.com/2013/09/edamame-copy.jpg?w=1024&h=680",
+        name: "Edamame",
+        description: "Steamed soybeans sprinkled with sea salt, a classic appetizer."
     },
     {
         category: "Appetizers",
         price: "$10.99",
-        image: "img/asian_appetizer8.jpg",
+        image: "https://www.indianveggiedelight.com/wp-content/uploads/2022/04/air-fryer-tofu-1152x1536.jpg",
         name: "Crispy Tofu Bites",
         description: "Crispy fried tofu bites with a sweet and spicy dipping sauce."
     }
@@ -162,7 +162,7 @@ function displayFilteredDishes(filteredDishes) {
             dishName.textContent = dish.name;
             dishDescription.textContent = dish.description;
 
-            //@TODO imageDiv.style.backgroundImage = 
+            imageDiv.style.backgroundImage = "url("+dish.image+")";
 
             dishItem.style.display = "block";    
         }
