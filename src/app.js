@@ -168,3 +168,8 @@ function displayFilteredDishes(filteredDishes) {
         }
     })
 }
+
+// Event listener for the specific dish item in menu.html
+document.querySelector('.imgDiv4').addEventListener('click', function() {
+    window.location.href = 'item.html';
+});
