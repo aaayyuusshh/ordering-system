@@ -30,14 +30,13 @@
     font-size: 15px;
 }
 
-#dishCategoryButton1 {
+.selectedDishCategoryButton {
     background-color: rgb(199, 20, 20);
     color: white;
     border: none;
 }
 
 .dishGrid {
-    
     display: flex;
     justify-content: space-evenly;
 }
