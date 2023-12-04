@@ -155,3 +155,8 @@ h2 {
     margin-top: 20px; 
     border: 1px solid #ccc; 
 }
+
+.itemImageTag{
+    width: 125%;
+    height: 100%;
+}

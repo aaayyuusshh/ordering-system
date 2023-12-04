@@ -163,13 +163,48 @@ function displayFilteredDishes(filteredDishes) {
             dishDescription.textContent = dish.description;
 
             imageDiv.style.backgroundImage = "url("+dish.image+")";
-
             dishItem.style.display = "block";    
         }
     })
 }
 
-// Event listener for the specific dish item in menu.html
-document.querySelector('.imgDiv4').addEventListener('click', function() {
-    window.location.href = 'item.html';
-});
+let currentCategory = 'Popular'; // Default category
+
+function setupDishClickListeners() {
+    // Add listeners to category buttons
+    const categoryButtons = document.querySelectorAll('.dishCategoryButton');
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            currentCategory = button.textContent.trim();
+        });
+    });
+
+    // Add listeners to dish items
+    const imgDivs = document.querySelectorAll('.imgDiv');
+    imgDivs.forEach((imgDiv, index) => {
+        imgDiv.addEventListener('click', () => {
+            const offset = getIndexOffset(currentCategory);
+            const actualIndex = index + offset;
+
+            if (dishes[actualIndex]) {
+                const dishData = JSON.stringify(dishes[actualIndex]);
+                localStorage.setItem('selectedDish', dishData);
+                window.location.href = 'item.html';
+            }
+        });
+    });
+}
+
+function getIndexOffset(category) {
+    const categoryOrder = ['Popular', 'Appetizers', /* other categories... */];
+    let offset = 0;
+
+    for (let i = 0; i < categoryOrder.indexOf(category); i++) {
+        offset += dishes.filter(dish => dish.category === categoryOrder[i]).length;
+    }
+
+    return offset;
+}
+
+document.addEventListener('DOMContentLoaded', setupDishClickListeners);
+

@@ -53,7 +53,7 @@
 
     <div class="itemContainer">
         <div class="itemImage">
-            <img src="img/chicken.jpg" width="15%" height="15%" alt="Item Image" class="itemImage">
+            <img src="img/chicken.jpg" width="15%" height="15%" alt="Item Image" class="itemImageTag">
         </div>
     
         <div class="itemDetails">
@@ -143,6 +143,21 @@
                         });
                     });
                 });
+                function updateItemDetailsFromStorage() {
+                    const selectedDish = JSON.parse(localStorage.getItem('selectedDish'));
+                    console.log("Loaded from local storage:", selectedDish); // Ensure this logs correctly
+            
+                    if (selectedDish) {
+                        document.querySelector(".itemTitle").textContent = selectedDish.name;
+                        document.querySelector(".itemDescription").textContent = selectedDish.description;
+                        document.querySelector(".itemPrice").textContent = selectedDish.price;
+                        let itemImageElement = document.querySelector(".itemImageTag");
+                        if(itemImageElement) {
+                            itemImageElement.src = selectedDish.image;
+                        }
+                    }
+                }
+                document.addEventListener('DOMContentLoaded', updateItemDetailsFromStorage)
             </script>
             </div>
         </div>
