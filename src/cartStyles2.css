@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.cartTitleContainer {
+    /* background-color: rgb(229, 140, 140); */
+    margin-top: 30px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ourCartTitle {
+    font-size: 65px;
+}
+
+.cartDescription {
+    font-size: 17px;
+    margin: 7px 0px 0px 0;
+}
+
+.allContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.cartItemImage {
+    height : 80px;
+    width: 200px;
+    background-image: url(https://minimalistbaker.com/wp-content/uploads/2019/01/Easy-Vegan-Pad-Thai-SQUARE.jpg);
+    margin-left: 20px;
+
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+
+}
+
+.allContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.itemDetailsContainer {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    margin: 10px 0;
+}
+
+.foodDetailsContainer {
+    display: flex;
+    width: 100%;
+    /* justify-content: space-evenly; */
+    margin-left: 40px;
+    align-items: center;
+}
+
+.foodDetail {
+    margin: 0px 40px;
+}
+
+.quantityContainer {
+    display: flex;
+}
+
+.quantityIcon {
+    width: 30px; 
+    height: 30px; 
+    cursor: pointer;
+}
+
+.quantity {
+    font-size: 24px;
+    margin: 0px 15px;
+}
+
+.foodName {
+    font-size: 25px;
+}
+
+.foodPrice {
+    font-size: 25px;
+}
+
+.removeIconImage {
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.divider {
+    width: 100%;
+    height: 1px;
+    background-color: #d3d3d3;
+}
+
+.subtotalBox {
+    padding: 8px;
+    border-radius: 10px; 
+    width: 300px;
+    margin: 20px 0 0 20px;
+    border: 1px solid black;
+}
+
+.subtotalContent {
+    color: #464742;
+    font-size: 20px;
+}
+
+.subtotalContent p {
+    margin: 10px 0;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.submitButton {
+    margin-right: 50px;
+}
+
+.viewCartButton {
+    padding: 10px 40px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-size: 17px;
+    margin-bottom: 20px;
+}

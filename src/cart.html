@@ -4,10 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="cartStyles.css">
+    <link rel="stylesheet" href="cartStyles2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>View Cart</title>
-
 </head>
+
 <body>
     <nav class="navBar">
         <div class="topNavBarContainer">
@@ -32,44 +35,74 @@
         <p class="ourCartTitle">View Cart</p>
         <p class="cartDescription"> View the items you currently want to order that you have added to the cart. </p>
     </div>
-
-    <div class="buttonsContainer">
-        <button class="cancelButton">CANCEL ORDER</button>
-        <button class="submitButton">SUBMIT ORDER</button>
-    </div>
-
    
-    <div class="itemTemplate">
-        <div class="divider"></div>
+    <div class="allContainer">
+        
         <div class="itemDetailsContainer">
-            <img src="img/logo.png" awidth="25%" class="foodImage">
-            <div class="foodInfo">
-                <p class="foodName">Honey Garlic Fried Chicken</p>
-                <div class="quantityContainer">
-                    <img src="img/minus.png" alt="Minus Icon" class="quantityIcon">
-                    <span class="quantity">1</span>
-                    <img src="img/plus.png" alt="Plus Icon" class="quantityIcon">
+                <div class="cartItemImage"> </div>
+
+                <div class="foodDetailsContainer">
+                    <p class="foodDetail foodName">Honey Garlic Fried Chicken</p>
+                    <div class="foodDetail quantityContainer">
+                        <img src="img/minus.png" alt="Minus Icon" class="minusIcon quantityIcon">
+                        <p class="quantity">1</p>
+                        <img src="img/plus.png" alt="Plus Icon" class="addIcon quantityIcon">
+                    </div>
+                    <p class="foodDetail foodPrice">$10.99</p>
+                    <img src="img/circle_X.png"  class="foodDetail removeIconImage" alt="Remove Icon">
                 </div>
-                <p class="foodPrice">$10.99</p>
-                <span class="removeIcon">
-                    <img src="img/circle_X.png" alt="Remove Icon" class="removeIconImage">
-                </span>
-                
-            </div>
-            
         </div>
         <div class="divider"></div>
-    </div>
 
-    <div class="subtotalBox">
-        <div class="subtotalContent">
-            <p>Subtotal: $20.99</p>
-            <p>GST: $1.05</p>
-            <p>Total: $22.04</p>
+        <div class="itemDetailsContainer">
+            <div class="cartItemImage"> </div>
+
+            <div class="foodDetailsContainer">
+                <p class="foodDetail foodName">Honey Garlic Fried Chicken</p>
+                <div class="foodDetail quantityContainer">
+                    <img src="img/minus.png" alt="Minus Icon" class="minusIcon quantityIcon">
+                    <p class="quantity">1</p>
+                    <img src="img/plus.png" alt="Plus Icon" class="addIcon quantityIcon">
+                </div>
+                <p class="foodDetail foodPrice">$10.99</p>
+                <img src="img/circle_X.png"  class="foodDetail removeIconImage" alt="Remove Icon">
+            </div>
         </div>
-    </div>
-    
+        <div class="divider"></div>
 
-    
+        <div class="itemDetailsContainer">
+            <div class="cartItemImage"> </div>
+
+            <div class="foodDetailsContainer">
+                <p class="foodDetail foodName">Honey Garlic Fried Chicken</p>
+                <div class="foodDetail quantityContainer">
+                    <img src="img/minus.png" alt="Minus Icon" class="minusIcon quantityIcon">
+                    <p class="quantity">1</p>
+                    <img src="img/plus.png" alt="Plus Icon" class="addIcon quantityIcon">
+                </div>
+                <p class="foodDetail foodPrice">$10.99</p>
+                <img src="img/circle_X.png"  class="foodDetail removeIconImage" alt="Remove Icon">
+            </div>
+        </div>
+        <div class="divider"></div>
+
+       
+        
+        
+        <div class="subtotalBox">
+            <div class="subtotalContent">
+                <p>Subtotal: $20.99</p>
+                <p>GST: $1.05</p>
+                <p>Total: $22.04</p>
+            </div>
+        </div>
+
+        <div class="buttonsContainer">
+            <button class="submitButton viewCartButton">SUBMIT ORDER</button>
+            <button class="discardButton viewCartButton">DISCARD</button>
+        </div>
+
+    </div>
+        
 </body>
 </html>
