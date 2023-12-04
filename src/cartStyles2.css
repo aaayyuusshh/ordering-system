@@ -19,6 +19,7 @@
 .cartDescription {
     font-size: 17px;
     margin: 7px 0px 0px 0;
+    color: rgb(106, 106, 106);
 }
 
 .allContainer {
@@ -133,8 +134,15 @@
 
 .viewCartButton {
     padding: 10px 40px;
-    border: 1px solid black;
+    border: none;
     border-radius: 20px;
     font-size: 17px;
     margin-bottom: 20px;
+    background-color: rgb(105, 105, 105);
+    color: white;
+    font-weight: bold;
+}
+
+.discardButton {
+    background-color: rgb(172, 36, 36);
 }
