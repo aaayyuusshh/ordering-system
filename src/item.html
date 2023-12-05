@@ -15,9 +15,7 @@
 
     <style>
     
-
         .nutritionalSubsection {
-            
             position: relative; 
         }
 
@@ -77,16 +75,18 @@
                 <li>
                     <div class="topNavListDiv"><p><a href="#">VIEW BILL</a></p></div>
                 </li>
-              
             </ul>
         </div>
-
-        
     </nav>
 
-    <div class="bottomNavBarContainer">
+    <div class="bottomNavBarContainerItem">
         <div class="backContainer" id="backButton">
-            <p class="logoText">BACK</p>
+            <button class="logoText">Go Back</button>
+        </div>
+
+        <div class="menuTitleContainerItem">
+            <p class="ourMenuTitle">Our Menu</p>
+            <p class="menuDescriptionItem">Crafting culinary harmony through the fusion of Asian flavours. </p>
         </div>
         
         <!-- call waiter pop up, calls showConfirmation function in waiterPopUp js then returns component values-->
@@ -97,16 +97,10 @@
                 <!-- Buttons inside the modal content, with click events for notifyWaiter and closeModal functions -->
                 <button onclick="notifyWaiter()"></button>
                 <button onclick="closeModal()"></button>
+            </div>
         </div>
-        
-    </div>
-        
     </div>
 
-    <div class="menuTitleContainer" style="margin-top: -70px">
-        <p class="ourMenuTitle">Our Menu</p>
-        <p class="menuDescription">Crafting culinary harmony through the fusion of Asian flavours. </p>
-    </div>
 
     <div class="itemContainer">
         <div class="itemContainer1-1">
