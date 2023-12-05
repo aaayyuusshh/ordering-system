@@ -62,7 +62,6 @@
 .foodDetailsContainer {
     display: flex;
     width: 100%;
-    /* justify-content: space-evenly; */
     margin-left: 40px;
     align-items: center;
 }
@@ -73,6 +72,8 @@
 
 .quantityContainer {
     display: flex;
+    align-items: center;
+    flex-basis: 150px; /* Fixed width for quantity section */
 }
 
 .quantityIcon {
@@ -88,10 +89,14 @@
 
 .foodName {
     font-size: 25px;
+    flex-grow: 1; /* Allows the food name to take up available space */
+    text-align: left; /* Align text to the left */
+    margin-right: 20px; /* Ensures a gap between name and quantity */
 }
 
 .foodPrice {
     font-size: 25px;
+    flex-basis: 100px; /* Fixed width for the price section */
 }
 
 .removeIconImage {
@@ -100,7 +105,9 @@
     display: inline-block;
     cursor: pointer;
     margin-right: 40px;
+    flex-basis: 40px; /* Fixed width for the remove icon section */
 }
+
 
 .divider {
     width: 100%;
@@ -110,9 +117,9 @@
 
 .subtotalBox {
     padding: 8px;
-    border-radius: 10px; 
+    border-radius: 10px;
     width: 300px;
-    margin: 20px 0 0 20px;
+    margin: 20px auto;
     border: 1px solid black;
 }
 
@@ -127,9 +134,11 @@
 
 .buttonsContainer {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
 }
 
 .submitButton {
