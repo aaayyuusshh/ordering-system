@@ -30,10 +30,12 @@
             </ul>
         </div>
     </nav>
-
     <div class="cartTitleContainer">
-        <p class="ourCartTitle">View Cart</p>
-        <p class="cartDescription"> View the items you currently want to order that you have added to the cart. </p>
+        <a href="menu.html" class="backButton">BACK</a>
+        <div class="centeredContent">
+            <p class="ourCartTitle">View Cart</p>
+            <p class="cartDescription">View the items you currently want to order that you have added to the cart.</p>
+        </div>
     </div>
    
     <div class="allContainer">
@@ -254,6 +256,12 @@
                 gstElement.textContent = 'GST: $0.00';
                 totalElement.textContent = 'Total: $0.00';
             }
+
+            // Attach event listener to the backButton
+            const backButton = document.getElementById('backButton');
+            backButton.addEventListener('click', function() {
+                window.location.href = 'menu.html'; // Replace 'menu.html' with the actual path to your menu page
+            });
         });
 
     </script>
