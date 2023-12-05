@@ -7,13 +7,15 @@ body {
 .bottomNavBarContainerItem {
     display: flex;
     justify-content: space-between;
-    margin: 30px 0 50px 0;
+    margin: 20px 0 50px 0;
 }
 
 .menuTitleContainerItem {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 49px;
+    margin-top: 10px;
 }
 
 .menuDescriptionItem {
@@ -165,7 +167,6 @@ h2 {
     align-items: center;
 }
 
-
 .nutritionalSubsection {
     margin-top: 10px;
     cursor: pointer;
@@ -204,15 +205,13 @@ h2 {
 }
 
 .logoText {
-    font-size: 14px;
-    margin-top: 5px;
-    height: 30px;
-    padding: 3px 30px;;
+    height: 32px;
+    padding: 0px 20px;;
     border-radius: 20px;
     border: 0px solid white;
     background-color: dimgray;
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     margin-left: 20px;
 }
 
