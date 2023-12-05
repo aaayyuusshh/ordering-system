@@ -80,8 +80,8 @@
     </nav>
 
     <div class="bottomNavBarContainerItem">
-        <div class="backContainer" id="backButton">
-            <button class="logoText">Go Back</button>
+        <div class="backContainer">
+            <button class="backButton">Go Back</button>
         </div>
 
         <div class="menuTitleContainerItem">
@@ -277,7 +277,7 @@
                     });
 
                      // Event listener for the "BACK" button
-                    const backButton = document.getElementById('backButton');
+                    const backButton = document.querySelector('.backButton');
                     backButton.addEventListener('click', function() {
                         window.location.href = 'menu.html'; // Redirect to the menu page
                     });
