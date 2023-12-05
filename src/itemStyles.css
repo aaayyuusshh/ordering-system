@@ -18,6 +18,8 @@ body {
 .itemImage {
     border-radius: 30px;
     width: 30vw;
+    max-width: 600px;
+    max-height: 600px;
 }
 
 .itemContainer1-2 {
@@ -90,6 +92,7 @@ body {
 
 .specialInstructions {
     width: 80%;
+    height: 100px;
     padding: 10px;
     margin-top: 5px;
     font-size: 16px;
@@ -109,6 +112,7 @@ body {
     margin-bottom: 50px; 
     font-weight: bolder;
     height: 60px;
+    width: 280px;
     border-radius: 20px;
     border: 2px solid white;
     background-color: rgb(48,48,48);
@@ -152,7 +156,8 @@ h2 {
 .nutritionalSubsection h3 {
     font-size: 20px;
     color: #333;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
 }
 
 .nutritionalSubsection .hiddenInformation {

@@ -11,6 +11,46 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>Ordering System</title>
+
+
+    <style>
+    
+
+        .nutritionalSubsection {
+            
+            position: relative; 
+        }
+
+        .nutritionalSubsection h3 {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            cursor: pointer; 
+        }
+
+        .hiddenInformation {
+            display: none; 
+        }
+
+        .nutritionalSubsection.active .hiddenInformation {
+            display: block;
+        }
+
+        
+        .nutritionalSubsection h3::after {
+            content: '\25BC'; 
+            font-size: 20px;
+            margin-left: 5px;
+            transform: rotate(0deg);
+            transition: transform 0.3s ease; 
+        }
+
+        
+        .nutritionalSubsection.active h3::after {
+            transform: rotate(180deg);
+        }
+    </style>
+    
 </head>
 <body>
     <nav class="navBar">
@@ -113,7 +153,6 @@
 
                 <hr class="separator">
 
-                <!-- Subsection 1: View Ingredients and Allergens -->
                 <div class="nutritionalSubsection" id="viewIngredients">
                     <h3>View Ingredients and Allergens</h3>
                     <!-- Hidden information initially -->
@@ -138,7 +177,7 @@
 
                 <hr class="separator">
 
-                <!-- Subsection 2: View Nutritional Summary -->
+                 <!-- Subsection 2: View Nutritional Summary -->
                 <div class="nutritionalSubsection" id="viewNutritionalSummary">
                     <h3>View Nutritional Summary</h3>
                     <!-- Hidden information initially -->
