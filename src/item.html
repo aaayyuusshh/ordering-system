@@ -120,7 +120,7 @@
 
     <div class="itemContainer">
         <div class="itemContainer1-1">
-            <img src="img/chicken.jpg" alt="Item Image" class="itemImage">
+            <img src="img/chicken.jpg" alt="Item Image" class="itemImageTag">
         </div>
         
         <div class="itemContainer1-2">
@@ -141,9 +141,7 @@
     
                 <!-- Text area for special instructions -->
                 <textarea id="specialInstructions" class="specialInstructions" placeholder="Type your special instructions here..."></textarea>
-                <div class="addToCartContainer">
-                    <button class="addToCart">ADD TO CART</button>
-                </div>
+                <button class="addToCart">ADD TO CART</button>
                 
             </div>
         
@@ -200,6 +198,92 @@
 
                 <!-- ... (remaining HTML) ... -->
             </div>
+            <script>
+                // JavaScript for toggling the hiddenInformation class on click
+                document.addEventListener('DOMContentLoaded', function () {
+                    const subsections = document.querySelectorAll('.nutritionalSubsection');
+
+                    subsections.forEach(function (subsection) {
+                        subsection.addEventListener('click', function () {
+                            // Toggle the active class on the clicked subsection
+                            this.classList.toggle('active');
+                        });
+                    });
+                });
+                function updateItemDetailsFromStorage() {
+                    const selectedDish = JSON.parse(localStorage.getItem('selectedDish'));
+                    console.log("Loaded from local storage:", selectedDish); // Ensure this logs correctly
+            
+                    if (selectedDish) {
+                        document.querySelector(".itemTitle").textContent = selectedDish.name;
+                        document.querySelector(".itemDescription").textContent = selectedDish.description;
+                        document.querySelector(".itemPrice").textContent = selectedDish.price;
+                        let itemImageElement = document.querySelector(".itemImageTag");
+                        if(itemImageElement) {
+                            itemImageElement.src = selectedDish.image;
+                        }
+                    }
+                }
+                document.addEventListener('DOMContentLoaded', updateItemDetailsFromStorage)
+                // Quantity function
+                document.addEventListener('DOMContentLoaded', function () {
+                    // Select the "+" button and quantity input field
+                    const quantityButton = document.querySelector('.quantityButton');
+                    const quantityInput = document.querySelector('.quantityInput');
+
+                    // Event listener for the "+" button
+                    quantityButton.addEventListener('click', function() {
+                        // Increment the quantity
+                        let currentQuantity = parseInt(quantityInput.value);
+                        currentQuantity++;
+                        quantityInput.value = currentQuantity;
+                    });
+
+                    // Select the "-" button
+                    const quantityMinusButton = document.querySelector('.quantityMinusButton');
+                    
+                    // Event listener for the "-" button
+                    quantityMinusButton.addEventListener('click', function() {
+                        // Decrement the quantity but ensure it doesn't go below 1
+                        let currentQuantity = parseInt(quantityInput.value);
+                        if (currentQuantity > 1) {
+                            currentQuantity--;
+                            quantityInput.value = currentQuantity;
+                        }
+                    });
+                    // Select the "Add to Cart" button
+                    const addToCartButton = document.querySelector('.addToCart');
+
+                    // Add event listener to the "Add to Cart" button
+                    addToCartButton.addEventListener('click', function() {
+                        // Get item details
+                        const itemName = document.querySelector('.itemTitle').textContent;
+                        const itemPrice = document.querySelector('.itemPrice').textContent;
+                        const quantity = parseInt(document.querySelector('.quantityInput').value);
+                        const itemImage = document.querySelector('.itemImageTag').src;
+
+                        // Create an object for the cart item
+                        const cartItem = {
+                            name: itemName,
+                            price: itemPrice,
+                            quantity: quantity,
+                            image: itemImage
+                        };
+
+                        // Save the item to local storage
+                        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                        cart.push(cartItem);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+
+                        // Alert user that item has been added to cart!
+                        alert('Item added to cart!');
+
+                        // Redirect back to the menu page
+                        window.location.href = 'menu.html';
+                    });
+
+                });
+            </script>
             </div>
         </div>
             

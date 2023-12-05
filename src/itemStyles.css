@@ -198,5 +198,10 @@ h2 {
     margin-left: 20px;
 }
 
-
+.itemImageTag{
+    border-radius: 30px;
+    width: 30vw;
+    max-width: 600px;
+    max-height: 4cqmax;
+}
 
