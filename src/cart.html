@@ -236,6 +236,13 @@
                     <button class="discardButton viewCartButton">DISCARD</button>
                 `;
                 allContainer.appendChild(buttonsContainer);
+
+                // Attach event listener to the submitButton
+                const submitButton = document.querySelector('.submitButton');
+                submitButton.addEventListener('click', function() {
+                    // Redirect to trackorder.html
+                    window.location.href = 'trackorder.html';
+                });
             }
 
             function updateDisplayForEmptyCart() {
