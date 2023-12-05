@@ -85,9 +85,8 @@
     </nav>
 
     <div class="bottomNavBarContainer">
-        <div class="homelogoContainer">
-            <img src="img/house.svg" width="30%" class="logoIcon" alt="House Icon">
-            <p class="logoText">HOME</p>
+        <div class="backContainer" id="backButton">
+            <p class="logoText">BACK</p>
         </div>
         
         <!-- call waiter pop up, calls showConfirmation function in waiterPopUp js then returns component values-->
@@ -281,6 +280,12 @@
 
                         // Redirect back to the menu page
                         window.location.href = 'menu.html';
+                    });
+
+                     // Event listener for the "BACK" button
+                    const backButton = document.getElementById('backButton');
+                    backButton.addEventListener('click', function() {
+                        window.location.href = 'menu.html'; // Redirect to the menu page
                     });
 
                 });
