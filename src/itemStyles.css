@@ -1,45 +1,51 @@
-.itemContainer {
-    margin-left: 100px;
-    margin-top: 50px;
-    column-gap: 5px;
-    align-items: center;
-    grid-template-columns: 1fr 1fr 1fr;
+body {
+    margin: 0;
+    overflow-x: hidden;
+    max-width: 100vw;
+}
 
+.itemContainer {
+    column-gap: 5px;
+    align-items: flex-start; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    object-fit: cover;
+    max-height: 400px;
+    padding: 0 10%;
 }
 
 .itemImage {
-    object-fit: cover;
-    width: 450px;
-    height: 450px;
     border-radius: 30px;
+    width: 30vw;
+}
+
+.itemContainer1-2 {
     float: left;
+    width: 70vw;
+    align-items: center;
+    margin-left: 5%;
 }
 
 .itemDetails {
-    float: left;
-    margin-left: 50px;
-    padding-left: 20px;
-    padding-top: 20px;
+    text-align: center;
 }
 
 .itemTitle {
     font-size: 50px; 
     text-align: center; 
-    margin-left: 200px;
     margin-bottom: 10px; 
 }
 
 .itemPrice{
     color: darkred;
     text-align: center; 
-    margin-left: 200px;
     font-size: 40px; 
     margin-bottom: 10px; 
 }
 
 .itemDescription{
     text-align: center; 
-    margin-left: 200px;
     font-size: 25px; 
     margin-bottom: 10px; 
 }
@@ -47,8 +53,8 @@
 .quantityControls {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-top: 10px;
-    margin-left: 500px; 
 }
 
 .quantityButton {
@@ -60,7 +66,6 @@
 }
 
 .quantityMinusButton {
-    
     width: 40px;
     height: 40px;
     cursor: pointer;
@@ -80,7 +85,6 @@
     display: block;
     font-size: 20px;
     margin-top: 10px;
-    margin-left: 200px; 
     font-style: italic;
 }
 
@@ -89,25 +93,28 @@
     padding: 10px;
     margin-top: 5px;
     font-size: 16px;
-    margin-left: 200px; 
     background-color: cornsilk;
 }
 
+
+.addToCartContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+}
+
 .addToCart {
-    margin-top: 20px; 
+    margin-top: 10px; 
     margin-bottom: 50px; 
     font-weight: bolder;
     height: 60px;
-    padding: 0px 50px;
     border-radius: 20px;
-    border: 0px solid white;
+    border: 2px solid white;
     background-color: rgb(48,48,48);
     color: white;
     font-size: 30px;
     text-align: center; 
-    margin-left: 450px; 
-    margin-right: auto; 
-    display: block; 
 }
 
 h2 {
@@ -123,7 +130,19 @@ h2 {
 
 .nutritionalInformation {
     margin-top: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
+
+.separator {
+    margin: 20px 0 0;
+    border: 1px solid #ccc; 
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
 
 .nutritionalSubsection {
     margin-top: 10px;
@@ -147,11 +166,32 @@ h2 {
 
 .hiddenInformation{
     font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
-.separator {
-    margin-top: 20px; 
-    border: 1px solid #ccc; 
+.homelogoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
 }
+
+.homelogoContainer .logoIcon {
+    margin-left: 20px;
+}
+
+.logoText {
+    font-size: 14px;
+    margin-top: 5px;
+    height: 30px;
+    padding: 3px 30px;;
+    border-radius: 20px;
+    border: 0px solid white;
+    background-color: dimgray;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+
+

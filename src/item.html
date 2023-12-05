@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="itemStyles.css">
+    <link rel="stylesheet" href="menuStyles.css">
+    <link rel="stylesheet" href="waiterPopUpStyle.css"> <!-- call waiter style -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -39,43 +41,72 @@
             </ul>
         </div>
 
-        <!-- BOTTOM NAV -->
-        <!-- will need to add classes for the p and button as well when styling -->
-        <div class="bottomNavBarContainer">
-            <img src="img/logo.png" width="25%" class= "logoTitle" alt="">
-            <ul class="bottomNavList">
-                <li>Home</li>
-                <li>Menu</li>
-            </ul>
-            <button class="callWaiterButton">Call Waiter</button>
-        </div>
+        
     </nav>
 
-    <div class="itemContainer">
-        <div class="itemImage">
-            <img src="img/chicken.jpg" width="15%" height="15%" alt="Item Image" class="itemImage">
+    <div class="bottomNavBarContainer">
+        <div class="homelogoContainer">
+            <img src="img/house.svg" width="30%" class="logoIcon" alt="House Icon">
+            <p class="logoText">HOME</p>
         </div>
+        
+        <!-- call waiter pop up, calls showConfirmation function in waiterPopUp js then returns component values-->
+        <button class="callWaiterButton" onclick="showConfirmation()">Call Waiter</button>
+        <!-- The modal container with a unique ID (confirmationModal) and a modal content container -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content" id="modalContent">
+                <!-- Buttons inside the modal content, with click events for notifyWaiter and closeModal functions -->
+                <button onclick="notifyWaiter()"></button>
+                <button onclick="closeModal()"></button>
+        </div>
+        
+</div>
+        
+    </div>
+
+    <div class="menuTitleContainer">
+        <p class="ourMenuTitle">Our Menu</p>
+        <p class="menuDescription">Crafting culinary harmony through the fusion of Asian flavours. </p>
+        <div class="dishCategoryContainer">
+            <button class="dishCategoryButton selectedDishCategoryButton">Popular</button>
+            <button class="dishCategoryButton"> Appetizers</button>
+            <button class="dishCategoryButton">Chicken</button>
+            <button class="dishCategoryButton">Beef</button>
+            <button class="dishCategoryButton">Drinks</button>
+        </div>
+    </div>
+
+
+
+    <div class="itemContainer">
+        <div class="itemContainer1-1">
+            <img src="img/chicken.jpg" alt="Item Image" class="itemImage">
+        </div>
+        
+        <div class="itemContainer1-2">
+            <div class="itemDetails">
+                <h1 class="itemTitle">Honey Garlic Fried Chicken</h1>
+                <p class="itemDescription">Featuring chicken pieces coated in a sweet and tangy honey garlic glaze.</p>
+                <h1 class="itemPrice">$20.99</h1>
+        
+                <!-- Quantity controls  -->
+                <div class="quantityControls">
+                    <img src="img/minus.svg" alt="Minus" class="quantityMinusButton">
+                    <input type="number" class="quantityInput" value="1" min="1" readonly>
+                    <img src="img/add.svg" alt="Plus" class="quantityButton">
+                </div>
     
-        <div class="itemDetails">
-            <h1 class="itemTitle">Honey Garlic Fried Chicken</h1>
-            <p class="itemDescription">Featuring chicken pieces coated in a sweet and tangy honey garlic glaze.</p>
-            <h1 class="itemPrice">$20.99</h1>
+                <!-- Label for special instructions -->
+                 <label for="specialInstructions" class="specialInstructionsLabel">Special Instructions (Optional)</label>
     
-            <!-- Quantity controls  -->
-            <div class="quantityControls">
-                <img src="img/minus.svg" alt="Minus" class="quantityMinusButton">
-                <input type="number" class="quantityInput" value="1" min="1" readonly>
-                <img src="img/add.svg" alt="Plus" class="quantityButton">
+                <!-- Text area for special instructions -->
+                <textarea id="specialInstructions" class="specialInstructions" placeholder="Type your special instructions here..."></textarea>
+                <div class="addToCartContainer">
+                    <button class="addToCart">ADD TO CART</button>
+                </div>
+                
             </div>
-
-            <!-- Label for special instructions -->
-             <label for="specialInstructions" class="specialInstructionsLabel">Special Instructions (Optional)</label>
-
-            <!-- Text area for special instructions -->
-            <textarea id="specialInstructions" class="specialInstructions" placeholder="Type your special instructions here..."></textarea>
-
-            <button class="addToCart">ADD TO CART</button>
-
+        
             <!-- Nutritional Information -->
             <div class="nutritionalInformation">
                 <h2>NUTRITIONAL INFORMATION</h2>
@@ -130,22 +161,13 @@
 
                 <!-- ... (remaining HTML) ... -->
             </div>
-
-            <script>
-                // JavaScript for toggling the hiddenInformation class on click
-                document.addEventListener('DOMContentLoaded', function () {
-                    const subsections = document.querySelectorAll('.nutritionalSubsection');
-
-                    subsections.forEach(function (subsection) {
-                        subsection.addEventListener('click', function () {
-                            // Toggle the active class on the clicked subsection
-                            this.classList.toggle('active');
-                        });
-                    });
-                });
-            </script>
             </div>
         </div>
+            
+        </div>
     </div>
+
+    <!-- call waiter js -->
+    <script src="waiterPopUp.js"></script>
 </body>
 </html>

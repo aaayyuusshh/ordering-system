@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="cartStyles2.css">
+    <link rel="stylesheet" href="menuStyles.css">
+    <link rel="stylesheet" href="trackorderStyle.css">
+    <link rel="stylesheet" href="waiterPopUpStyle.css"> <!-- call waiter style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <title>ViewBill</title>
+
+    <script>
+        // Function to retrieve orders from localStorage and display them
+        function displayOrders() {
+            // Retrieve orders from localStorage
+            const orders = JSON.parse(localStorage.getItem('orders')) || [];
+
+            // Display orders in the track order container
+            const trackOrderContainer = document.getElementById('trackOrderContainer');
+            trackOrderContainer.innerHTML = '';
+
+            orders.forEach(order => {
+                const orderItem = document.createElement('li');
+                orderItem.classList.add('orderItem');
+                orderItem.innerHTML = `
+                    <div class="itemDetails">
+                        <p class="itemQuantity">${order.quantity}</p>
+                        <img src="${order.image}" alt="Item Photo" class="itemPhoto">
+                        <div class="itemInfo">
+                            <p class="itemName">${order.name}</p>
+                            <div class="stepper-wrapper">
+                                <!-- Progress bar or order status can be added here -->
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="separator">
+                `;
+                trackOrderContainer.appendChild(orderItem);
+            });
+        }
+
+        // Call displayOrders when the page loads
+        window.onload = displayOrders;
+    </script>
+
+</head>
+
+
+
+
+
+<body>
+    <nav class="navBar">
+        <div class="topNavBarContainer">
+            <ul class="topNavList">
+                <li>
+                    <div class="topNavListDiv"><p><a href="#">EN (plcehldr)</a></p></div>
+                </li>
+                <li>
+                    <div class="topNavListDiv"><p><a href="#">TRACK ORDER</a></p></div>
+                </li>
+                <li>
+                    <div class="topNavListDiv selectTester"><p><a href="#">VIEW CART</a></p></div>
+                </li>
+                <li>
+                    <div class="topNavListDiv"><p><a href="#">VIEW BILL</a></p></div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="bottomNavBarContainer">
+        <div class="homelogoContainer">
+            <img src="img/house.svg" width="30%" class="logoIcon" alt="House Icon">
+            <p class="logoText">HOME</p>
+        </div>
+
+        <!-- call waiter pop up, calls showConfirmation function in waiterPopUp js then returns component values-->
+        <button class="callWaiterButton" onclick="showConfirmation()">Call Waiter</button>
+        <!-- The modal container with a unique ID (confirmationModal) and a modal content container -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content" id="modalContent">
+                <!-- Buttons inside the modal content, with click events for notifyWaiter and closeModal functions -->
+                <button onclick="notifyWaiter()"></button>
+                <button onclick="closeModal()"></button>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="trackOrderTitleContainer">
+        <p class="trackOrderTitle">YOUR BILL</p>
+        <p class="trackOrderDescription">Review and settle your expenses with a clear breakdown of your order.</p>
+    </div>
+
+    <hr class="separator">
+
+    <div class="trackOrderContainer" id="trackOrderContainer">
+    
+    <!-- call waiter js -->
+    <script src="waiterPopUp.js"></script>
+        
+</body>
+</html>

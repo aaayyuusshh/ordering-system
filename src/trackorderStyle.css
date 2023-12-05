@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+.homelogoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.homelogoContainer .logoIcon {
+    margin-left: 20px;
+}
+
+.logoText {
+    font-size: 14px;
+    margin-top: 5px;
+    height: 30px;
+    padding: 3px 30px;;
+    border-radius: 20px;
+    border: 0px solid white;
+    background-color: dimgray;
+    color: white;
+    font-size: 20px;
+    margin-left: 20px;
+}
+
+
+.trackOrderTitleContainer{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.trackOrderTitle {
+    font-size: 65px;
+}
+
+.trackOrderDescription {
+    font-size: 20px;
+    font-style: italic;
+    margin: 7px 0px 0px 0;
+    color: rgb(48,48,48);
+}
+
+.separator {
+    border: 1px solid rgb(192,192,192); 
+    margin-left: 30px; 
+    margin-right: 30px;
+}
+
+
+.orderItem {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+
+.itemDetails {
+    display: flex;
+    align-items: center;
+}
+
+.itemQuantity {
+    margin-right: 100px; 
+    margin-left: 200px;
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+.itemPhoto {
+    width: 150px; 
+    height: 150px; 
+    margin-right: 50px;
+    border-radius: 15px;
+}
+
+.itemInfo {
+    flex: 1;
+}
+
+.itemName{
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: bolder;
+}
+
+
+.stepper-wrapper {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 800px; /* lengthened the progress line */
+}
+
+.itemName,
+.estimatedCompletion
+{
+    margin-left: 15%; /* adjust text alignments above and under progress bar*/
+}
+
+.stepper-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.stepper-item::before {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    top: 20px;
+    left: -50%;
+    z-index: 2;
+}
+
+.stepper-item::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 2;
+}
+
+.stepper-item .step-counter {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    border-radius: 50%;
+    background: #ccc;
+    margin-bottom: 6px;
+}
+
+.stepper-item.completed {
+    font-weight: bold;
+}
+
+.stepper-item.completed .step-counter {
+    background-color: #4bb543;
+}
+
+.stepper-item.completed::after {
+    position: absolute;
+    content: "";
+    border-bottom: 5px solid #4bb543;  /* thickened the line */
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 3;
+}
+
+.stepper-item:first-child::before {
+    content: none;
+}
+
+.stepper-item:last-child::after {
+    content: none;
+}
+
+
+.estimatedCompletion {
+    margin-top: 0px;
+}
+
+.estimatedCompletion p {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.estimatedCompletion span {
+    font-weight: bold;
+    color: #4CAF50; 
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 35%; /* Adjust the width as needed */
+    max-width: 600px; /* Set a maximum width if necessary */
+    height: 35%; /* Adjust the height as needed */
+    max-height: 400px; /* Set a maximum height if necessary */
+    padding: 20px;
+    background-color:#e1eacd;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds the height */
+    border-radius: 2%;
+}
+
+
+
+.modal-text {
+    font-size: 50px; /* Adjust the font size as needed */
+    margin-bottom: 20px;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+}
+
+.modal-button {
+    padding: 10px 20px; /* Adjust the padding as needed */
+    font-size: 18px; /* Adjust the font size as needed */
+    margin: 0 10px; /* Adjust the margin between buttons */
+}
+
