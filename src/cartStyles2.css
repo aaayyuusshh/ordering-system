@@ -4,16 +4,16 @@
 }
 
 .cartTitleContainer {
-    margin-top: 30px;
-    height: 150px;
-    position: relative; /* Needed for absolute positioning of child elements */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* ... other styles ... */
 }
 
 .centeredContent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%; /* Ensures it takes the full width of the container */
+    text-align: center;
+    flex-grow: 1; /* This makes the centered content take up the available space */
+    margin-top: 35px;
 }
 .ourCartTitle {
     font-size: 65px;
@@ -56,6 +56,7 @@
     width: 100%;
     justify-content: flex-start;
     margin: 10px 0;
+    padding-top: 25px;
 }
 
 .foodDetailsContainer {
@@ -161,4 +162,10 @@
     color: white;
     font-size: 20px;
     margin-left: 20px;
+}
+
+.backButton, .callWaiterButton {
+    /* Ensure that buttons stay aligned to the top */
+    align-self: flex-start;
+    margin-top: 10px;
 }
