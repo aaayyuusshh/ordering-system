@@ -227,6 +227,16 @@
                 document.addEventListener('DOMContentLoaded', updateItemDetailsFromStorage)
                 // Quantity function
                 document.addEventListener('DOMContentLoaded', function () {
+
+                    const subsections = document.querySelectorAll('.nutritionalSubsection');
+
+                    subsections.forEach(function(subsection) {
+                        subsection.addEventListener('click', function() {
+                            // Toggle the active class on the clicked subsection
+                            this.classList.toggle('active');
+                        });
+                    });
+                    
                     // Select the "+" button and quantity input field
                     const quantityButton = document.querySelector('.quantityButton');
                     const quantityInput = document.querySelector('.quantityInput');
@@ -283,6 +293,7 @@
                     });
 
                 });
+                
             </script>
             </div>
         </div>
