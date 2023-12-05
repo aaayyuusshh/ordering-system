@@ -164,6 +164,23 @@
 
             appendSubtotalBoxAndButtons();
 
+            // Attach event listener to the discardButton
+            const discardButton = document.querySelector('.discardButton');
+            discardButton.addEventListener('click', function() {
+                // Clear cartData and update localStorage
+                cartData.length = 0;
+                localStorage.setItem('cart', JSON.stringify(cartData));
+
+                // Clear the display
+                allContainer.innerHTML = '';
+
+                // Append an empty subtotal box and buttons container
+                appendSubtotalBoxAndButtons();
+
+                // Update the display to show an empty cart
+                updateDisplayForEmptyCart();
+            });
+
             // Update item quantity and price
             function updateItemQuantityAndPrice(index, price) {
                 const newQuantity = cartData[index].quantity;
@@ -219,6 +236,16 @@
                     <button class="discardButton viewCartButton">DISCARD</button>
                 `;
                 allContainer.appendChild(buttonsContainer);
+            }
+
+            function updateDisplayForEmptyCart() {
+                const subtotalElement = document.querySelector('.subtotalBox .subtotalContent p:nth-child(1)');
+                const gstElement = document.querySelector('.subtotalBox .subtotalContent p:nth-child(2)');
+                const totalElement = document.querySelector('.subtotalBox .subtotalContent p:nth-child(3)');
+
+                subtotalElement.textContent = 'Subtotal: $0.00';
+                gstElement.textContent = 'GST: $0.00';
+                totalElement.textContent = 'Total: $0.00';
             }
         });
 
