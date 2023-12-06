@@ -115,3 +115,7 @@
 .dishGridRow2 {
     margin: 25px 0;
 }
+
+.backContainerMenu {
+    visibility: hidden;
+}

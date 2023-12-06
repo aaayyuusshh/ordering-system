@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="menuStyles.css">
+    <link rel="stylesheet" href="waiterPopUpStyle.css"> <!-- call waiter style -->
+    <link rel="stylesheet" href="itemStyles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -41,9 +43,29 @@
         </div>
     </nav>
 
+    <div class="bottomNavBarContainerItem">
+        <div class="backContainerMenu">
+            <button class="backButton">Go Back</button>
+        </div>
+
+        <div class="menuTitleContainerItem">
+            <p class="ourMenuTitle">Our Menu</p>
+            <p class="menuDescriptionItem">Crafting culinary harmony through the fusion of Asian flavours. </p>
+        </div>
+        
+        <!-- call waiter pop up, calls showConfirmation function in waiterPopUp js then returns component values-->
+        <button class="callWaiterButton" onclick="showConfirmation()">Call Waiter</button>
+        <!-- The modal container with a unique ID (confirmationModal) and a modal content container -->
+        <div id="confirmationModal" class="modal">
+            <div class="modal-content" id="modalContent">
+                <!-- Buttons inside the modal content, with click events for notifyWaiter and closeModal functions -->
+                <button onclick="notifyWaiter()"></button>
+                <button onclick="closeModal()"></button>
+            </div>
+        </div>
+    </div>
+
     <div class="menuTitleContainer">
-        <p class="ourMenuTitle">Our Menu</p>
-        <p class="menuDescription">Crafting culinary harmony through the fusion of Asian flavours. </p>
         <div class="dishCategoryContainer">
             <button class="dishCategoryButton selectedDishCategoryButton">Popular</button>
             <button class="dishCategoryButton"> Appetizers</button>
@@ -51,6 +73,7 @@
             <button class="dishCategoryButton">Beef</button>
             <button class="dishCategoryButton">Drinks</button>
         </div>
+     
     </div>
 
     <div class="dishGrid dishGridRow1">
@@ -123,7 +146,8 @@
     </div>
 
     <script src= app.js></script>
-
+    <!-- call waiter js -->
+    <script src="waiterPopUp.js"></script>
     <!-- languages js -->
     <script src="languages.js"></script>
 </body>
