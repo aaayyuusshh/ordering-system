@@ -50,7 +50,7 @@
     <div class="cartTitleContainer">
        <div class="backButton">
         <a href="menu.html" >MENU</a>
-        <img src="https://cdn-icons-png.flaticon.com/512/3570/3570168.png" class="menuIcon"alt="">
+        <img src="https://cdn-icons-png.flaticon.com/512/3570/3570168.png" class="menuIcon" alt="">
        </div> 
         
         <div class="centeredContent">
@@ -107,7 +107,11 @@
 
                     orderItem.innerHTML = `
                         <div class="itemDetails">
-                            <p class="itemQuantity">${item.quantity}</p>
+                            <div class="quantityContainer"> 
+                                <p class="qtyTitle">${"Qty"}</p>
+                                <p class="itemQuantity">${item.quantity}</p>
+                            </div>
+                            
                             <img src="${item.image}" alt="Item Photo" class="itemPhoto">
                             <div class="itemInfo">
                                 <p class="itemName">${item.name}</p>
