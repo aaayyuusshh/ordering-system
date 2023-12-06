@@ -221,3 +221,22 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+
+// nav bar navigation code below
+
+const trackOrderButton = document.querySelector(".trackOrderButton");
+const viewCartButton = document.querySelector(".viewCartButton");
+const viewBillButton = document.querySelector(".viewBillButton");
+const topNavListDiv = document.querySelectorAll(".topNavListDiv");
+
+topNavListDiv.forEach(item => {
+    item.addEventListener("click", () => {
+        console.log("click");
+        topNavListDiv.forEach((button) => {
+            button.classList.remove("selectTester");
+        })
+        item.classList.add("selectTester");
+
+    })
+});
