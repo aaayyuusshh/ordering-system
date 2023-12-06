@@ -17,11 +17,6 @@
    
 
 </head>
-
-
-
-
-
 <body>
     <nav class="navBar">
         <div class="topNavBarContainer">
@@ -88,60 +83,73 @@
      <!-- Modify your Track Order file to display submitted orders -->
      <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const trackOrderContainer = document.querySelector('.orderList');
-    
-            // Assuming you have the submitted items stored in localStorage with key 'submittedOrders'
-            const submittedOrders = JSON.parse(localStorage.getItem('submittedOrders')) || [];
-    
-            // Group items by name
-            const groupedOrders = submittedOrders.reduce((acc, item) => {
-                let price = parseFloat(item.price.replace('$', ''));
-                let quantity = item.quantity;
-                let totalPrice = price * quantity;
-    
-                if (acc[item.name]) {
-                    acc[item.name].quantity += quantity;
-                    acc[item.name].totalPrice += totalPrice;
-                } else {
-                    acc[item.name] = {...item, quantity: quantity, totalPrice: totalPrice};
-                }
-    
-                return acc;
-            }, {});
-    
-            // Display each grouped item
-            Object.values(groupedOrders).forEach((item) => {
-                const orderItem = document.createElement('li');
-                orderItem.className = 'orderItem';
-    
-                orderItem.innerHTML = `
-                    <div class="itemDetails">
-                        <p class="itemQuantity">${item.quantity}</p>
-                        <img src="${item.image}" alt="Item Photo" class="itemPhoto">
-                        <p class="itemName">${item.name}</p>
-                        <p class="itemPrice">${item.price}</p>
-                        <p class="totalPrice">$${item.totalPrice.toFixed(2)}</p>
-                    </div>
-                `;
-    
-                trackOrderContainer.appendChild(orderItem);
-            });
+        const billContainer = document.querySelector('.viewBillContainer');
+        const orderList = document.querySelector('.orderList');
+
+        // Assuming you have the submitted items stored in localStorage with key 'submittedOrders'
+        const submittedOrders = JSON.parse(localStorage.getItem('submittedOrders')) || [];
+
+        let subtotal = 0;
+
+        // Group items by name and calculate subtotal
+        const groupedOrders = submittedOrders.reduce((acc, item) => {
+            let price = parseFloat(item.price.replace('$', ''));
+            let quantity = item.quantity;
+            let totalPrice = price * quantity;
+            subtotal += totalPrice;
+
+            if (acc[item.name]) {
+                acc[item.name].quantity += quantity;
+                acc[item.name].totalPrice += totalPrice;
+            } else {
+                acc[item.name] = {...item, quantity: quantity, totalPrice: totalPrice};
+            }
+
+            return acc;
+        }, {});
+
+        // Display each grouped item
+        Object.values(groupedOrders).forEach((item) => {
+            const orderItem = document.createElement('li');
+            orderItem.className = 'orderItem';
+
+            orderItem.innerHTML = `
+                <div class="itemDetails">
+                    <p class="itemQuantity">${item.quantity}</p>
+                    <img src="${item.image}" alt="Item Photo" class="itemPhoto">
+                    <p class="itemName">${item.name}</p>
+                    <p class="itemPrice">${item.price}</p>
+                    <p class="totalPrice">$${item.totalPrice.toFixed(2)}</p>
+                </div>
+            `;
+
+            orderList.appendChild(orderItem);
         });
+
+        // Append subtotalBox
+        const gst = subtotal * 0.05;
+        const total = subtotal + gst;
+
+        const subtotalBox = document.createElement('div');
+        subtotalBox.className = 'subtotalBox';
+        subtotalBox.innerHTML = `
+            <div class="subtotalContent">
+                <p>Subtotal: $${subtotal.toFixed(2)}</p>
+                <p>GST: $${gst.toFixed(2)}</p>
+                <p>Total: $${total.toFixed(2)}</p>
+            </div>
+        `;
+        billContainer.appendChild(subtotalBox);
+    });
+
     
         // Event listener for the "HOME" button
         const homeButton = document.querySelector('.logoText');
         homeButton.addEventListener('click', function() {
             window.location.href = 'index.html'; // Redirect to the menu page
         });
+        
     </script>
-    
-
-    
-
-
-
-
-
     <!-- call waiter js -->
     <script src="waiterPopUp.js"></script>
 
