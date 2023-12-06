@@ -122,134 +122,108 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-
-        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
-        const allContainer = document.querySelector('.allContainer');
-
-        // Function to render cart items and attach event listeners
-        function renderCartItems() {
-            allContainer.innerHTML = ''; // Clear existing items
-            let subtotal = 0;
-
-            cartData.forEach((item, index) => {
-                let price = parseFloat(item.price.replace('$', ''));
-                let quantity = item.quantity;
-                let totalPrice = price * quantity;
-                subtotal += totalPrice;
-
-                const itemContainer = document.createElement('div');
-                itemContainer.className = 'itemDetailsContainer';
-                itemContainer.innerHTML = `
-                    <div class="cartItemImage">
-                        <img src="${item.image}" alt="Item Image" class = "item-image">
-                    </div>
-                    <div class="foodDetailsContainer">
-                        <p class="foodDetail foodName">${item.name}</p>
-                        <div class="foodDetail quantityContainer">
-                            <img src="img/minus.png" alt="Minus Icon" class="minusIcon quantityIcon" id="minus-${index}">
-                            <p class="quantity" id="quantity-${index}">${quantity}</p>
-                            <img src="img/plus.png" alt="Plus Icon" class="addIcon quantityIcon" id="plus-${index}">
-                        </div>
-                        <p class="foodDetail foodPrice" id="price-${index}">$${totalPrice.toFixed(2)}</p>
-                        <img src="img/circle_X.png" class="foodDetail removeIconImage" alt="Remove Icon" id="remove-${index}">
-                    </div>
-                `;
-                allContainer.appendChild(itemContainer);
-
-                // Attach event listeners to each item
-                document.getElementById(`minus-${index}`).addEventListener('click', () => updateItemQuantity(index, false, price));
-                document.getElementById(`plus-${index}`).addEventListener('click', () => updateItemQuantity(index, true, price));
-                document.getElementById(`remove-${index}`).addEventListener('click', () => removeItem(index));
-            });
-
-            appendSubtotalBoxAndButtons(subtotal);
-        }
-
-        // Update item quantity and re-render cart items
-        function updateItemQuantity(index, isAdding, price) {
-            isAdding ? cartData[index].quantity++ : cartData[index].quantity--;
-            if (cartData[index].quantity < 1) cartData[index].quantity = 1;
-            localStorage.setItem('cart', JSON.stringify(cartData));
-            renderCartItems();
-        }
-
-        // Remove item and re-render cart items
-        function removeItem(index) {
-            cartData.splice(index, 1);
-            localStorage.setItem('cart', JSON.stringify(cartData));
-            renderCartItems();
-        }
-
-        // Append subtotal box and buttons container
-        function appendSubtotalBoxAndButtons(subtotal) {
-            // Append subtotal box
-            const subtotalBox = document.createElement('div');
-            subtotalBox.className = 'subtotalBox';
-            subtotalBox.innerHTML = `
-                <div class="subtotalContent">
-                    <p>Subtotal: $${subtotal.toFixed(2)}</p>
-                    <p>GST: $${(subtotal * 0.05).toFixed(2)}</p>
-                    <p>Total: $${(subtotal * 1.05).toFixed(2)}</p>
-                </div>
-            `;
-            allContainer.appendChild(subtotalBox);
-
-            // Append buttons container
-            const buttonsContainer = document.createElement('div');
-            buttonsContainer.className = 'buttonsContainer';
-            buttonsContainer.innerHTML = `
-                <button class="submitButton viewCartButton">SUBMIT ORDER</button>
-                <button class="discardButton viewCartButton">DISCARD</button>
-            `;
-            allContainer.appendChild(buttonsContainer);
-
+            let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+            const allContainer = document.querySelector('.allContainer');
     
-
-            // Attach event listener to discard button
-            const discardButton = document.querySelector('.discardButton');
-            discardButton.addEventListener('click', () => {
-                cartData = [];
+            function renderCartItems() {
+                allContainer.innerHTML = '';
+                let subtotal = 0;
+    
+                cartData.forEach((item, index) => {
+                    let price = parseFloat(item.price.replace('$', ''));
+                    let quantity = item.quantity;
+                    let totalPrice = price * quantity;
+                    subtotal += totalPrice;
+    
+                    const itemContainer = document.createElement('div');
+                    itemContainer.className = 'itemDetailsContainer';
+                    itemContainer.innerHTML = `
+                        <div class="cartItemImage">
+                            <img src="${item.image}" alt="Item Image" class="item-image">
+                        </div>
+                        <div class="foodDetailsContainer">
+                            <p class="foodDetail foodName">${item.name}</p>
+                            <div class="foodDetail quantityContainer">
+                                <img src="img/minus.png" alt="Minus Icon" class="minusIcon quantityIcon" id="minus-${index}">
+                                <p class="quantity" id="quantity-${index}">${quantity}</p>
+                                <img src="img/plus.png" alt="Plus Icon" class="addIcon quantityIcon" id="plus-${index}">
+                            </div>
+                            <p class="foodDetail foodPrice" id="price-${index}">$${totalPrice.toFixed(2)}</p>
+                            <img src="img/circle_X.png" class="foodDetail removeIconImage" alt="Remove Icon" id="remove-${index}">
+                        </div>
+                    `;
+                    allContainer.appendChild(itemContainer);
+    
+                    document.getElementById(`minus-${index}`).addEventListener('click', () => updateItemQuantity(index, false, price));
+                    document.getElementById(`plus-${index}`).addEventListener('click', () => updateItemQuantity(index, true, price));
+                    document.getElementById(`remove-${index}`).addEventListener('click', () => removeItem(index));
+                });
+    
+                appendSubtotalBoxAndButtons(subtotal);
+            }
+    
+            function updateItemQuantity(index, isAdding, price) {
+                isAdding ? cartData[index].quantity++ : cartData[index].quantity--;
+                if (cartData[index].quantity < 1) cartData[index].quantity = 1;
                 localStorage.setItem('cart', JSON.stringify(cartData));
                 renderCartItems();
-            });
-
-            //Attach event listener to the submitOrderButton
-            const submitButton = document.querySelector('.submitButton');
-                submitButton.addEventListener('click', function () {
-                    // Retrieve cart data from localStorage
-                    const newOrders = JSON.parse(localStorage.getItem('cart')) || [];
-                    const existingOrders = JSON.parse(localStorage.getItem('submittedOrders')) || [];
-
-                    // Log the cart data to the console (you can modify this part)
-                    console.log('Submitted Items:', cartData);
-
-                    // Merge new orders with existing orders
-                    const updatedOrders = existingOrders.concat(newOrders);
-
-                    // Save updated orders to localStorage
-                    localStorage.setItem('submittedOrders', JSON.stringify(updatedOrders));
-
-                     // Clear the cart data from localStorage
-                    localStorage.removeItem('cart');
-
-                    // Redirect to trackorder.html
-                    window.location.href = 'trackorder.html';
-
-                    localStorage.setItem("selectedItemId", "trackOrderButtonId");
-
-                    
-             });
-
-        }
-
-        // Initial render of cart items
-        renderCartItems();
-
-        // Event listener for BACK button
-        const backButton = document.querySelector('.backButton');
-        backButton.addEventListener('click', () => window.location.href = 'menu.html');
-    });
+            }
+    
+            function removeItem(index) {
+                cartData.splice(index, 1);
+                localStorage.setItem('cart', JSON.stringify(cartData));
+                renderCartItems();
+            }
+    
+            function appendSubtotalBoxAndButtons(subtotal) {
+                const subtotalBox = document.createElement('div');
+                subtotalBox.className = 'subtotalBox';
+                subtotalBox.innerHTML = `
+                    <div class="subtotalContent">
+                        <p>Subtotal: $${subtotal.toFixed(2)}</p>
+                        <p>GST: $${(subtotal * 0.05).toFixed(2)}</p>
+                        <p>Total: $${(subtotal * 1.05).toFixed(2)}</p>
+                    </div>
+                `;
+                allContainer.appendChild(subtotalBox);
+    
+                const buttonsContainer = document.createElement('div');
+                buttonsContainer.className = 'buttonsContainer';
+                buttonsContainer.innerHTML = `
+                    <button class="submitButton viewCartButton">SUBMIT ORDER</button>
+                    <button class="discardButton viewCartButton">DISCARD</button>
+                `;
+                allContainer.appendChild(buttonsContainer);
+    
+                const discardButton = document.querySelector('.discardButton');
+                discardButton.addEventListener('click', () => {
+                    cartData = [];
+                    localStorage.setItem('cart', JSON.stringify(cartData));
+                    renderCartItems();
+                });
+    
+                const submitButton = document.querySelector('.submitButton');
+                submitButton.addEventListener('click', function() {
+                    const userConfirmation = confirm("Are you sure you want to submit your order?");
+                    if (userConfirmation) {
+                        const newOrders = JSON.parse(localStorage.getItem('cart')) || [];
+                        const existingOrders = JSON.parse(localStorage.getItem('submittedOrders')) || [];
+                        const updatedOrders = existingOrders.concat(newOrders);
+                        localStorage.setItem('submittedOrders', JSON.stringify(updatedOrders));
+                        localStorage.removeItem('cart');
+                        window.location.href = 'trackorder.html';
+                        localStorage.setItem("selectedItemId", "trackOrderButtonId");
+                    }
+                });
+            }
+    
+            renderCartItems();
+    
+            const backButton = document.querySelector('.backButton');
+            backButton.addEventListener('click', () => window.location.href = 'menu.html');
+        });
     </script>
+    
     <!-- call waiter js -->
     <script src="waiterPopUp.js"></script>  
     
