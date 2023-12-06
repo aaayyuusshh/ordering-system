@@ -34,28 +34,19 @@
 }
 
 .cartItemImage {
-    height : 80px;
+    height : 100px;
     width: 200px;
-    background-image: url(https://minimalistbaker.com/wp-content/uploads/2019/01/Easy-Vegan-Pad-Thai-SQUARE.jpg);
-    margin-left: 20px;
-
+    margin-left: 50px;
     background-size: cover;
     background-position: center;
     overflow: hidden;
     background-repeat: no-repeat;
-
-}
-
-.allContainer {
-    display: flex;
-    flex-direction: column;
 }
 
 .itemDetailsContainer {
     display: flex;
     width: 100%;
     justify-content: flex-start;
-    margin: 10px 0;
     padding-top: 25px;
 }
 
@@ -73,7 +64,7 @@
 .quantityContainer {
     display: flex;
     align-items: center;
-    flex-basis: 150px; /* Fixed width for quantity section */
+    flex-basis: 300px; /* Fixed width for quantity section */
 }
 
 .quantityIcon {
@@ -96,7 +87,7 @@
 
 .foodPrice {
     font-size: 25px;
-    flex-basis: 100px; /* Fixed width for the price section */
+    flex-basis: 200px; /* Fixed width for the price section */
 }
 
 .removeIconImage {
@@ -104,10 +95,9 @@
     height: 30px;
     display: inline-block;
     cursor: pointer;
-    margin-right: 40px;
-    flex-basis: 40px; /* Fixed width for the remove icon section */
+    margin-right:50px;
+    flex-basis: 20px; /* Fixed width for the remove icon section */
 }
-
 
 .divider {
     width: 100%;
@@ -118,18 +108,18 @@
 .subtotalBox {
     padding: 8px;
     border-radius: 10px;
-    width: 300px;
-    margin: 20px auto;
+    width: 350px;
+    margin: 20px auto 10px auto;
     border: 1px solid black;
 }
 
 .subtotalContent {
     color: #464742;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .subtotalContent p {
-    margin: 10px 0;
+    margin: 10px 5px;
 }
 
 .buttonsContainer {
