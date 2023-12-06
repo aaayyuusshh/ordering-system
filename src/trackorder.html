@@ -84,6 +84,11 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const trackOrderContainer = document.querySelector('.orderList');
+            
+            // It's a new session, clear submittedOrders and set session flag
+            // turn off current session, uncomment last commented line below, save, then comment it again 
+            // to clear previous session items from track order page
+            // localStorage.removeItem('submittedOrders');
 
             // Function to render submitted orders
             function renderSubmittedOrders() {
