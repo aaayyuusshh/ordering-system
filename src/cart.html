@@ -121,15 +121,14 @@
     <script>
 
         document.addEventListener('DOMContentLoaded', function() {
-            const cartData = JSON.parse(localStorage.getItem('cart')) || [];
-            const allContainer = document.querySelector('.allContainer');
+        let cartData = JSON.parse(localStorage.getItem('cart')) || [];
+        const allContainer = document.querySelector('.allContainer');
 
+        // Function to render cart items and attach event listeners
+        function renderCartItems() {
+            allContainer.innerHTML = ''; // Clear existing items
             let subtotal = 0;
 
-            // Clear existing items (if any)
-            allContainer.innerHTML = '';
-
-            // Create and append cart item elements and calculate subtotal
             cartData.forEach((item, index) => {
                 let price = parseFloat(item.price.replace('$', ''));
                 let quantity = item.quantity;
@@ -155,103 +154,52 @@
                 `;
                 allContainer.appendChild(itemContainer);
 
-                // Minus icon event listener
-                document.getElementById(`minus-${index}`).addEventListener('click', function() {
-                    if (cartData[index].quantity > 1) {
-                        cartData[index].quantity--;
-                        updateItemQuantityAndPrice(index, price);
-                    }
-                });
-
-                // Plus icon event listener
-                document.getElementById(`plus-${index}`).addEventListener('click', function() {
-                    cartData[index].quantity++;
-                    updateItemQuantityAndPrice(index, price);
-                });
-
-                // Remove icon event listener
-                document.getElementById(`remove-${index}`).addEventListener('click', function() {
-                    cartData.splice(index, 1);
-                    localStorage.setItem('cart', JSON.stringify(cartData));
-                    itemContainer.remove(); // Remove the item container from the page
-                    recalculateAndDisplayTotals(); // Recalculate totals after removal
-                });
+                // Attach event listeners to each item
+                document.getElementById(`minus-${index}`).addEventListener('click', () => updateItemQuantity(index, false, price));
+                document.getElementById(`plus-${index}`).addEventListener('click', () => updateItemQuantity(index, true, price));
+                document.getElementById(`remove-${index}`).addEventListener('click', () => removeItem(index));
             });
 
-            appendSubtotalBoxAndButtons();
+            appendSubtotalBoxAndButtons(subtotal);
+        }
 
-            // Attach event listener to the discardButton
-            const discardButton = document.querySelector('.discardButton');
-            discardButton.addEventListener('click', function() {
-                // Clear cartData and update localStorage
-                cartData.length = 0;
-                localStorage.setItem('cart', JSON.stringify(cartData));
+        // Update item quantity and re-render cart items
+        function updateItemQuantity(index, isAdding, price) {
+            isAdding ? cartData[index].quantity++ : cartData[index].quantity--;
+            if (cartData[index].quantity < 1) cartData[index].quantity = 1;
+            localStorage.setItem('cart', JSON.stringify(cartData));
+            renderCartItems();
+        }
 
-                // Clear the display
-                allContainer.innerHTML = '';
+        // Remove item and re-render cart items
+        function removeItem(index) {
+            cartData.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cartData));
+            renderCartItems();
+        }
 
-                // Append an empty subtotal box and buttons container
-                appendSubtotalBoxAndButtons();
+        // Append subtotal box and buttons container
+        function appendSubtotalBoxAndButtons(subtotal) {
+            // Append subtotal box
+            const subtotalBox = document.createElement('div');
+            subtotalBox.className = 'subtotalBox';
+            subtotalBox.innerHTML = `
+                <div class="subtotalContent">
+                    <p>Subtotal: $${subtotal.toFixed(2)}</p>
+                    <p>GST: $${(subtotal * 0.05).toFixed(2)}</p>
+                    <p>Total: $${(subtotal * 1.05).toFixed(2)}</p>
+                </div>
+            `;
+            allContainer.appendChild(subtotalBox);
 
-                // Update the display to show an empty cart
-                updateDisplayForEmptyCart();
-            });
-
-            // Update item quantity and price
-            function updateItemQuantityAndPrice(index, price) {
-                const newQuantity = cartData[index].quantity;
-                const newTotalPrice = newQuantity * price;
-
-                document.getElementById(`quantity-${index}`).textContent = newQuantity;
-                document.getElementById(`price-${index}`).textContent = `$${newTotalPrice.toFixed(2)}`;
-
-                localStorage.setItem('cart', JSON.stringify(cartData));
-                recalculateAndDisplayTotals();
-            }
-
-            // Function to recalculate and display totals
-            function recalculateAndDisplayTotals() {
-                let newSubtotal = 0;
-                cartData.forEach(item => {
-                    let price = parseFloat(item.price.replace('$', ''));
-                    newSubtotal += price * item.quantity;
-                });
-
-                const gstRate = 0.05;
-                const newGST = newSubtotal * gstRate;
-                const newTotal = newSubtotal + newGST;
-
-                const subtotalElement = document.querySelector('.subtotalBox .subtotalContent p:nth-child(1)');
-                const gstElement = document.querySelector('.subtotalBox .subtotalContent p:nth-child(2)');
-                const totalElement = document.querySelector('.subtotalBox .subtotalContent p:nth-child(3)');
-
-                subtotalElement.textContent = `Subtotal: $${newSubtotal.toFixed(2)}`;
-                gstElement.textContent = `GST: $${newGST.toFixed(2)}`;
-                totalElement.textContent = `Total: $${newTotal.toFixed(2)}`;
-            }
-
-            // Function to append subtotal box and buttons container
-            function appendSubtotalBoxAndButtons() {
-                // Append subtotal box
-                const subtotalBox = document.createElement('div');
-                subtotalBox.className = 'subtotalBox';
-                subtotalBox.innerHTML = `
-                    <div class="subtotalContent">
-                        <p>Subtotal: $${subtotal.toFixed(2)}</p>
-                        <p>GST: $${(subtotal * 0.05).toFixed(2)}</p>
-                        <p>Total: $${(subtotal * 1.05).toFixed(2)}</p>
-                    </div>
-                `;
-                allContainer.appendChild(subtotalBox);
-
-                // Append buttons container
-                const buttonsContainer = document.createElement('div');
-                buttonsContainer.className = 'buttonsContainer';
-                buttonsContainer.innerHTML = `
-                    <button class="submitButton viewCartButton">SUBMIT ORDER</button>
-                    <button class="discardButton viewCartButton">DISCARD</button>
-                `;
-                allContainer.appendChild(buttonsContainer);
+            // Append buttons container
+            const buttonsContainer = document.createElement('div');
+            buttonsContainer.className = 'buttonsContainer';
+            buttonsContainer.innerHTML = `
+                <button class="submitButton viewCartButton">SUBMIT ORDER</button>
+                <button class="discardButton viewCartButton">DISCARD</button>
+            `;
+            allContainer.appendChild(buttonsContainer);
 
 
                 //Attach event listener to the submitOrderButton
