@@ -44,6 +44,15 @@
     background-repeat: no-repeat;
 }
 
+.item-image {
+    width: 170px; 
+    height: 100px; 
+    margin-right: 50px;
+    border-radius: 15px;
+    object-fit: cover;
+    display: block;
+}
+
 .itemDetailsContainer {
     display: flex;
     width: 100%;
@@ -176,3 +185,4 @@
     width: 38px;
     margin-left: 5px;
 }
+

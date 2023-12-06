@@ -53,6 +53,7 @@
             <p class="cartDescription">View the items you currently want to order that you have added to the cart.</p>
         </div>
         
+        
         <button class="callWaiterButton" onclick="showConfirmation()">Call Waiter</button>
     
         <!-- Modal for Call Waiter -->
@@ -62,6 +63,7 @@
                 <button onclick="closeModal()"></button>
             </div>
         </div>
+        
     </div>
     
    
@@ -135,7 +137,7 @@
                 itemContainer.className = 'itemDetailsContainer';
                 itemContainer.innerHTML = `
                     <div class="cartItemImage">
-                        <img src="${item.image}" alt="Item Image" style="width: 170px; height: 100px;">
+                        <img src="${item.image}" alt="Item Image" class = "item-image">
                     </div>
                     <div class="foodDetailsContainer">
                         <p class="foodDetail foodName">${item.name}</p>
