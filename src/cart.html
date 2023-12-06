@@ -20,7 +20,7 @@
                     <div class="topNavListDiv"><p><a href="#">EN (plcehldr)</a></p></div>
                 </li>
                 <li>
-                    <div class="topNavListDiv"><p><a href="#">TRACK ORDER</a></p></div>
+                    <div class="topNavListDiv"><p><a href="trackorder.html">TRACK ORDER</a></p></div>
                 </li>
                 <li>
                     <div class="topNavListDiv selectTester"><p><a href="#">VIEW CART</a></p></div>
@@ -119,6 +119,7 @@
 
     </div>
     <script>
+
         document.addEventListener('DOMContentLoaded', function() {
             const cartData = JSON.parse(localStorage.getItem('cart')) || [];
             const allContainer = document.querySelector('.allContainer');
@@ -252,12 +253,24 @@
                 `;
                 allContainer.appendChild(buttonsContainer);
 
-                // Attach event listener to the submitButton
+
+                //Attach event listener to the submitOrderButton
                 const submitButton = document.querySelector('.submitButton');
-                submitButton.addEventListener('click', function() {
-                    // Redirect to trackorder.html
-                    window.location.href = 'trackorder.html';
+                submitButton.addEventListener('click', function () {
+                    // Retrieve cart data from localStorage
+                    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+
+                    // Log the cart data to the console (you can modify this part)
+                    console.log('Submitted Items:', cartData);
+
+                    // Store submitted orders in localStorage
+                    localStorage.setItem('submittedOrders', JSON.stringify(cartData));
+
+                    
                 });
+
+
+                
             }
 
             function updateDisplayForEmptyCart() {
@@ -275,7 +288,17 @@
             backButton.addEventListener('click', function() {
                 window.location.href = 'menu.html'; // Replace 'menu.html' with the actual path to your menu page
             });
+
+
+
+           
+            
+    
         });
+
+
+
+        
 
     </script>
 
