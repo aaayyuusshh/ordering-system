@@ -221,3 +221,33 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+
+// nav bar navigation code below
+
+const topNavListDiv = document.querySelectorAll(".topNavListDiv");
+const trackOrderButton = document.querySelector(".trackOrderButton");
+const viewCartButton = document.querySelector(".viewCartButton");
+const viewBillButton = document.querySelector(".viewBillButton");
+
+topNavListDiv.forEach(item => {
+    item.addEventListener("click", () => {
+        console.log("click");
+        topNavListDiv.forEach((button) => {
+            button.classList.remove("selectTester2");
+        })
+
+        item.classList.add("selectTester2");
+
+        if(item.classList.contains("viewCartButton")) {
+            window.location.href = 'cart.html';
+        }
+        else if(item.classList.contains("trackOrderButton")) {
+            window.location.href = 'trackOrder.html';
+        }
+        else if(item.classList.contains("viewBillButton")) {
+            window.location.href = 'viewBill.html';
+        }
+    })
+});
+
