@@ -89,49 +89,52 @@
      <script>
         document.addEventListener('DOMContentLoaded', function () {
             const trackOrderContainer = document.querySelector('.orderList');
-
-            // Assume you have the submitted items stored in localStorage with key 'submittedOrders'
+    
+            // Assuming you have the submitted items stored in localStorage with key 'submittedOrders'
             const submittedOrders = JSON.parse(localStorage.getItem('submittedOrders')) || [];
-
-            submittedOrders.forEach((item, index) => {
-                const orderItem = document.createElement('li');
-                orderItem.className = 'orderItem';
-
+    
+            // Group items by name
+            const groupedOrders = submittedOrders.reduce((acc, item) => {
                 let price = parseFloat(item.price.replace('$', ''));
                 let quantity = item.quantity;
                 let totalPrice = price * quantity;
-               
-
-
+    
+                if (acc[item.name]) {
+                    acc[item.name].quantity += quantity;
+                    acc[item.name].totalPrice += totalPrice;
+                } else {
+                    acc[item.name] = {...item, quantity: quantity, totalPrice: totalPrice};
+                }
+    
+                return acc;
+            }, {});
+    
+            // Display each grouped item
+            Object.values(groupedOrders).forEach((item) => {
+                const orderItem = document.createElement('li');
+                orderItem.className = 'orderItem';
+    
                 orderItem.innerHTML = `
                     <div class="itemDetails">
                         <p class="itemQuantity">${item.quantity}</p>
                         <img src="${item.image}" alt="Item Photo" class="itemPhoto">
                         <p class="itemName">${item.name}</p>
                         <p class="itemPrice">${item.price}</p>
-                        <p class="totalPrice">$${totalPrice.toFixed(2)}</p>
-                        
+                        <p class="totalPrice">$${item.totalPrice.toFixed(2)}</p>
                     </div>
                 `;
-
+    
                 trackOrderContainer.appendChild(orderItem);
-
-                
             });
         });
-
-
-         // Event listener for the "HOME" button
+    
+        // Event listener for the "HOME" button
         const homeButton = document.querySelector('.logoText');
-        homeButton1.addEventListener('click', function() {
+        homeButton.addEventListener('click', function() {
             window.location.href = 'index.html'; // Redirect to the menu page
         });
-
-     
-
-
- 
-</script>
+    </script>
+    
 
     
 

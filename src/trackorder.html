@@ -77,34 +77,41 @@
         </ul>
     </div>
 
-    
-
-    
     <!-- Modify your Track Order file to display submitted orders -->
     <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const trackOrderContainer = document.querySelector('.orderList');
+        document.addEventListener('DOMContentLoaded', function() {
+            const trackOrderContainer = document.querySelector('.orderList');
+            
+            // It's a new session, clear submittedOrders and set session flag
+            // turn off current session, uncomment last commented line below, save,
+            // run live server to check if it's been cleared, then comment it again, save and run 
+            // to clear previous session items from track order page
+            // localStorage.removeItem('submittedOrders');
 
-                // Assume you have the submitted items stored in localStorage with key 'submittedOrders'
+            // Function to render submitted orders
+            function renderSubmittedOrders() {
+                trackOrderContainer.innerHTML = ''; // Clear existing items
+    
+                // Retrieve the submitted items stored in localStorage
                 const submittedOrders = JSON.parse(localStorage.getItem('submittedOrders')) || [];
-
+    
                 submittedOrders.forEach((item, index) => {
                     const orderItem = document.createElement('li');
                     orderItem.className = 'orderItem';
-
+    
                     const progressSteps = [
                         { name: 'Order Placed', completed: true },
                         { name: 'Preparing/Cooking', completed: false },
-                        { name: 'Delivered', completed: false },  // Assuming "Delivered" is not completed initially
+                        { name: 'Delivered', completed: false }
                     ];
-
+    
                     const progressHTML = progressSteps.map(step => `
                         <div class="stepper-item ${step.completed ? 'completed' : 'active'}">
                             <div class="step-counter">${step.completed ? '✔' : '✔'}</div>
                             <div class="step-name">${step.name}</div>
                         </div>
                     `).join('');
-
+    
                     orderItem.innerHTML = `
                         <div class="itemDetails">
                             <div class="quantityContainer"> 
@@ -122,24 +129,27 @@
                             </div>
                         </div>
                     `;
-
+    
                     trackOrderContainer.appendChild(orderItem);
-
+    
                     // Add a line separator after each order item
                     const separator = document.createElement('hr');
                     separator.className = 'separator';
                     trackOrderContainer.appendChild(separator);
                 });
-            });
+            
+            // Initial render of submitted orders
+            renderSubmittedOrders();
 
+            });
 
              // Event listener for the "HOME" button
             const homeButton = document.querySelector('.backButton');
             homeButton1.addEventListener('click', function() {
                 window.location.href = 'menu.html'; // Redirect to the menu page
             });
-
     </script>
+    
 
    <!-- call waiter js -->
    <script src="waiterPopUp.js"></script>
