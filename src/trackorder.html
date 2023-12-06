@@ -84,13 +84,6 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const trackOrderContainer = document.querySelector('.orderList');
-            
-            // Check if it's a new session based on sessionStorage
-            if (!sessionStorage.getItem('sessionStarted')) {
-                // It's a new session, clear submittedOrders and set session flag
-                localStorage.removeItem('submittedOrders');
-                sessionStorage.setItem('sessionStarted', 'true');
-            }
 
             // Function to render submitted orders
             function renderSubmittedOrders() {
