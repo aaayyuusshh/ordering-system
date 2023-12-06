@@ -35,13 +35,13 @@
                     </div>
                 </li>
                 <li>
-                    <div class="topNavListDiv"><p><a href="#">TRACK ORDER</a></p></div>
+                    <div class="topNavListDiv trackOrderButton" id="trackOrderButtonId">TRACK ORDER</div>
                 </li>
                 <li>
-                    <div class="topNavListDiv selectTester"><p><a href="cart.html">VIEW CART</a></p></div>
+                    <div class="topNavListDiv viewCartButtonz" id="viewCartButtonzId">VIEW CART</div>
                 </li>
                 <li>
-                    <div class="topNavListDiv"><p><a href="viewbill.html">VIEW BILL</a></p></div>
+                    <div class="topNavListDiv viewBillButton" id="viewBillButtonId">VIEW BILL</div>
                 </li>
             </ul>
         </div>
@@ -49,7 +49,7 @@
     
     <div class="cartTitleContainer">
        <div class="backButton">
-        <a href="menu.html" >MENU</a>
+         MENU
         <img src="https://cdn-icons-png.flaticon.com/512/3570/3570168.png" class="menuIcon" alt="">
        </div> 
         
@@ -144,7 +144,7 @@
 
         // Event listener for the "HOME" button
         const homeButton = document.querySelector('.backButton');
-        homeButton1.addEventListener('click', function() {
+        homeButton.addEventListener('click', function() {
             window.location.href = 'menu.html'; // Redirect to the menu page
         });
 
@@ -157,7 +157,7 @@
    <!-- languages js -->
    <script src="languages.js"></script>
 
-
+   <script src= app.js></script>
 </body>
 
 </html>

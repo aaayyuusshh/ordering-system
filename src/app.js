@@ -229,6 +229,14 @@ const topNavListDiv = document.querySelectorAll(".topNavListDiv");
 const trackOrderButton = document.querySelector(".trackOrderButton");
 const viewCartButton = document.querySelector(".viewCartButton");
 const viewBillButton = document.querySelector(".viewBillButton");
+const selectedItemId = localStorage.getItem("selectedItemId");
+
+if (selectedItemId) {
+    const selectedItem = document.getElementById(selectedItemId);
+    if (selectedItem) {
+      selectedItem.classList.add("selectTester2");
+    }
+}
 
 topNavListDiv.forEach(item => {
     item.addEventListener("click", () => {
@@ -239,15 +247,24 @@ topNavListDiv.forEach(item => {
 
         item.classList.add("selectTester2");
 
-        if(item.classList.contains("viewCartButton")) {
-            window.location.href = 'cart.html';
+        localStorage.setItem("selectedItemId", item.id);
+
+        if(item.classList.contains("trackOrderButton")) {
+            window.location.href = 'trackOrder.html'; 
         }
-        else if(item.classList.contains("trackOrderButton")) {
-            window.location.href = 'trackOrder.html';
+        else if(item.classList.contains("viewCartButtonz")) {
+            window.location.href = 'cart.html'; 
         }
         else if(item.classList.contains("viewBillButton")) {
-            window.location.href = 'viewBill.html';
+            window.location.href = 'viewBill.html'; 
         }
     })
 });
+
+
+//menu button 
+const menuButton = document.querySelector(".backButton");
+menuButton.addEventListener("click", () => {
+    localStorage.setItem("selectedItemId", "");
+})
 

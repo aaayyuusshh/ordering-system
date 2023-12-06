@@ -29,6 +29,7 @@ a {
     font-size: 25px;
     color: white;
     padding-top: 1px;
+    cursor: pointer;
 }
 
 .topNavList li {

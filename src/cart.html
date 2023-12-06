@@ -31,20 +31,20 @@
                     </div>
                 </li>
                 <li>
-                    <div class="topNavListDiv"><p><a href="trackorder.html">TRACK ORDER</a></p></div>
+                    <div class="topNavListDiv trackOrderButton" id="trackOrderButtonId">TRACK ORDER</div>
                 </li>
                 <li>
-                    <div class="topNavListDiv selectTester"><p><a href="#">VIEW CART</a></p></div>
+                    <div class="topNavListDiv viewCartButtonz" id="viewCartButtonzId">VIEW CART</div>
                 </li>
                 <li>
-                    <div class="topNavListDiv"><p><a href="viewbill.html">VIEW BILL</a></p></div>
+                    <div class="topNavListDiv viewBillButton" id="viewBillButtonId">VIEW BILL</div>
                 </li>
             </ul>
         </div>
     </nav>
     <div class="cartTitleContainer">
         <div class="backButton">
-            <a href="menu.html" >MENU</a>
+           MENU
             <img src="https://cdn-icons-png.flaticon.com/512/3570/3570168.png" class="menuIcon" alt="">
         </div> 
         
@@ -238,7 +238,7 @@
         renderCartItems();
 
         // Event listener for BACK button
-        const backButton = document.getElementById('backButton');
+        const backButton = document.querySelector('.backButton');
         backButton.addEventListener('click', () => window.location.href = 'menu.html');
     });
     </script>
@@ -247,5 +247,7 @@
     
     <!-- languages js -->  
     <script src="languages.js"></script>
+
+    <script src= app.js></script>
 </body>
 </html>
