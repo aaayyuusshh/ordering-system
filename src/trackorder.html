@@ -46,34 +46,28 @@
             </ul>
         </div>
     </nav>
-
-    <div class="bottomNavBarContainer">
-        <div class="homelogoContainer">
-            <img src="img/house.svg" width="30%" class="logoIcon" alt="House Icon">
-            <button class= "logoText">HOME</button>
+    
+    <div class="cartTitleContainer">
+        <a href="menu.html" class="backButton">BACK</a>
+        
+        <div class="centeredContent">
+            <p class="ourCartTitle">Submitted Orders</p>
+            <p class="cartDescription">Track your dine-in order, from kitchen to table, ensuring a delightful experience at our restaurant.</p>
         </div>
-
-        <!-- call waiter pop up, calls showConfirmation function in waiterPopUp js then returns component values-->
+        
         <button class="callWaiterButton" onclick="showConfirmation()">Call Waiter</button>
-        <!-- The modal container with a unique ID (confirmationModal) and a modal content container -->
+    
+        <!-- Modal for Call Waiter -->
         <div id="confirmationModal" class="modal">
             <div class="modal-content" id="modalContent">
-                <!-- Buttons inside the modal content, with click events for notifyWaiter and closeModal functions -->
                 <button onclick="notifyWaiter()"></button>
                 <button onclick="closeModal()"></button>
             </div>
         </div>
-
     </div>
 
-    <div class="trackOrderTitleContainer">
-        <p class="trackOrderTitle">Submitted Orders</p>
-        <p class="trackOrderDescription">Track your dine-in order, from kitchen to table, ensuring a delightful experience at our restaurant..</p>
-    </div>
 
     <hr class="separator">
-
-    
 
     <div class="trackOrderContainer">
         <ul class="orderList" id="dynamicOrderList">

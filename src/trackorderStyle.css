@@ -223,3 +223,6 @@
     margin: 0 10px; /* Adjust the margin between buttons */
 }
 
+.cartTitleContainer {
+    margin-bottom: 40px;
+}
