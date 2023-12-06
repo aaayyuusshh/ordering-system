@@ -40,3 +40,21 @@
     height: 50px; /* Adjust the height as needed */
     margin-right: 10px;
 }
+
+
+.getBillButton {
+    height: 70px;
+    width: 400px;
+    padding: 0px 30px;;
+    border-radius: 20px;
+    border: 0px solid white;
+    background-color:	rgb(88,88,88);
+    color: white;
+    font-size: 20px;
+    margin-left: 520px;
+    font-size: 40px;
+    font-weight: bolder;
+    margin-bottom: 50px;
+    margin-top: 50px;
+ 
+}
