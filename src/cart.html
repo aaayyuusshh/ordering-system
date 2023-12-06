@@ -113,6 +113,7 @@
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+
         let cartData = JSON.parse(localStorage.getItem('cart')) || [];
         const allContainer = document.querySelector('.allContainer');
 
@@ -207,13 +208,23 @@
             const submitButton = document.querySelector('.submitButton');
                 submitButton.addEventListener('click', function () {
                     // Retrieve cart data from localStorage
-                    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
+                    const newOrders = JSON.parse(localStorage.getItem('cart')) || [];
+                    const existingOrders = JSON.parse(localStorage.getItem('submittedOrders')) || [];
 
                     // Log the cart data to the console (you can modify this part)
                     console.log('Submitted Items:', cartData);
 
-                    // Store submitted orders in localStorage
-                    localStorage.setItem('submittedOrders', JSON.stringify(cartData));
+                    // Merge new orders with existing orders
+                    const updatedOrders = existingOrders.concat(newOrders);
+
+                    // Save updated orders to localStorage
+                    localStorage.setItem('submittedOrders', JSON.stringify(updatedOrders));
+
+                     // Clear the cart data from localStorage
+                    localStorage.removeItem('cart');
+
+                    // Redirect to trackorder.html
+                    window.location.href = 'trackorder.html';
 
                     
              });
