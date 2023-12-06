@@ -144,6 +144,7 @@
 
 .submitButton {
     margin-right: 50px;
+    cursor: pointer;
 }
 
 .viewCartButton {
@@ -159,6 +160,7 @@
 
 .discardButton {
     background-color: rgb(172, 36, 36);
+    cursor: pointer;
 }
 
 .backButton {

@@ -267,4 +267,3 @@ const menuButton = document.querySelector(".backButton");
 menuButton.addEventListener("click", () => {
     localStorage.setItem("selectedItemId", "");
 })
-
