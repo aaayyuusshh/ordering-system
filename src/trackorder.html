@@ -137,17 +137,17 @@
                     separator.className = 'separator';
                     trackOrderContainer.appendChild(separator);
                 });
-            
-            // Initial render of submitted orders
-            renderSubmittedOrders();
+            }
+                // Initial render of submitted orders
+                renderSubmittedOrders();
+        });
 
-            });
+        // Event listener for the "HOME" button
+        const homeButton = document.querySelector('.backButton');
+        homeButton1.addEventListener('click', function() {
+            window.location.href = 'menu.html'; // Redirect to the menu page
+        });
 
-             // Event listener for the "HOME" button
-            const homeButton = document.querySelector('.backButton');
-            homeButton1.addEventListener('click', function() {
-                window.location.href = 'menu.html'; // Redirect to the menu page
-            });
     </script>
     
 
