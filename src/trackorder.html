@@ -46,34 +46,31 @@
             </ul>
         </div>
     </nav>
-
-    <div class="bottomNavBarContainer">
-        <div class="homelogoContainer">
-            <img src="img/house.svg" width="30%" class="logoIcon" alt="House Icon">
-            <button class= "logoText">HOME</button>
+    
+    <div class="cartTitleContainer">
+       <div class="backButton">
+        <a href="menu.html" >MENU</a>
+        <img src="https://cdn-icons-png.flaticon.com/512/3570/3570168.png" class="menuIcon" alt="">
+       </div> 
+        
+        <div class="centeredContent">
+            <p class="ourCartTitle">Submitted Orders</p>
+            <p class="cartDescription">Track your dine-in order, from kitchen to table, ensuring a delightful experience at our restaurant.</p>
         </div>
-
-        <!-- call waiter pop up, calls showConfirmation function in waiterPopUp js then returns component values-->
+        
         <button class="callWaiterButton" onclick="showConfirmation()">Call Waiter</button>
-        <!-- The modal container with a unique ID (confirmationModal) and a modal content container -->
+    
+        <!-- Modal for Call Waiter -->
         <div id="confirmationModal" class="modal">
             <div class="modal-content" id="modalContent">
-                <!-- Buttons inside the modal content, with click events for notifyWaiter and closeModal functions -->
                 <button onclick="notifyWaiter()"></button>
                 <button onclick="closeModal()"></button>
             </div>
         </div>
-
     </div>
 
-    <div class="trackOrderTitleContainer">
-        <p class="trackOrderTitle">Submitted Orders</p>
-        <p class="trackOrderDescription">Track your dine-in order, from kitchen to table, ensuring a delightful experience at our restaurant..</p>
-    </div>
 
     <hr class="separator">
-
-    
 
     <div class="trackOrderContainer">
         <ul class="orderList" id="dynamicOrderList">
@@ -117,7 +114,11 @@
     
                     orderItem.innerHTML = `
                         <div class="itemDetails">
-                            <p class="itemQuantity">${item.quantity}</p>
+                            <div class="quantityContainer"> 
+                                <p class="qtyTitle">${"Qty"}</p>
+                                <p class="itemQuantity">${item.quantity}</p>
+                            </div>
+                            
                             <img src="${item.image}" alt="Item Photo" class="itemPhoto">
                             <div class="itemInfo">
                                 <p class="itemName">${item.name}</p>
@@ -136,18 +137,17 @@
                     separator.className = 'separator';
                     trackOrderContainer.appendChild(separator);
                 });
-            }
-    
+            
             // Initial render of submitted orders
             renderSubmittedOrders();
-    
-            // Event listener for the "HOME" button
-            const homeButton = document.querySelector('.logoText');
-            homeButton.addEventListener('click', function() {
-                window.location.href = 'index.html';
+
             });
-    
-        });
+
+             // Event listener for the "HOME" button
+            const homeButton = document.querySelector('.backButton');
+            homeButton1.addEventListener('click', function() {
+                window.location.href = 'menu.html'; // Redirect to the menu page
+            });
     </script>
     
 
