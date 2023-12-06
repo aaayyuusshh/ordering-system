@@ -120,7 +120,8 @@ body {
     padding: 10px;
     margin-top: 5px;
     font-size: 16px;
-    background-color: cornsilk;
+    background-color: white;
+    border-radius: 5px;
 }
 
 
@@ -135,8 +136,8 @@ body {
     margin-top: 10px; 
     margin-bottom: 50px; 
     font-weight: bolder;
-    height: 60px;
-    width: 280px;
+    padding: 9px 0;
+    width: 340px;
     border-radius: 20px;
     border: 2px solid white;
     background-color: rgb(48,48,48);
