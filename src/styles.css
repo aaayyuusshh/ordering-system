@@ -68,7 +68,6 @@ a {
     display: flex;
     justify-content: space-between;
     width: 320px;
-    margin-right: 120px;
     font-size: 45px;
 }
 
@@ -91,6 +90,14 @@ a {
   overflow: hidden;
   background-repeat: no-repeat;
   color: white;
+}
+
+#menuButton {
+    cursor: pointer;
+    font-weight: bold;
+    border: 1px solid rgba(0, 0, 0, 0.307);
+    padding: 10px 10px;
+    border-radius: 10px;
 }
 
 .sloganContainer {
