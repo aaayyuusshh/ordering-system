@@ -20,7 +20,7 @@
                     <div class="topNavListDiv"><p><a href="#">EN (plcehldr)</a></p></div>
                 </li>
                 <li>
-                    <div class="topNavListDiv"><p><a href="trackorder.html">TRACK ORDER</a></p></div>
+                    <div class="topNavListDiv"><p><a href="#">TRACK ORDER</a></p></div>
                 </li>
                 <li>
                     <div class="topNavListDiv selectTester"><p><a href="#">VIEW CART</a></p></div>
@@ -69,6 +69,7 @@
         </div>
         <div class="divider"></div>
 
+    
         <div class="itemDetailsContainer">
             <div class="cartItemImage"> </div>
 
@@ -85,25 +86,6 @@
         </div>
         <div class="divider"></div>
 
-        <div class="itemDetailsContainer">
-            <div class="cartItemImage"> </div>
-
-            <div class="foodDetailsContainer">
-                <p class="foodDetail foodName">Honey Garlic Fried Chicken</p>
-                <div class="foodDetail quantityContainer">
-                    <img src="img/minus.png" alt="Minus Icon" class="minusIcon quantityIcon">
-                    <p class="quantity">1</p>
-                    <img src="img/plus.png" alt="Plus Icon" class="addIcon quantityIcon">
-                </div>
-                <p class="foodDetail foodPrice">$10.99</p>
-                <img src="img/circle_X.png"  class="foodDetail removeIconImage" alt="Remove Icon">
-            </div>
-        </div>
-        <div class="divider"></div>
-
-       
-        
-        
         <div class="subtotalBox">
             <div class="subtotalContent">
                 <p>Subtotal: $20.99</p>
@@ -119,7 +101,6 @@
 
     </div>
     <script>
-
         document.addEventListener('DOMContentLoaded', function() {
         let cartData = JSON.parse(localStorage.getItem('cart')) || [];
         const allContainer = document.querySelector('.allContainer');
@@ -201,58 +182,29 @@
             `;
             allContainer.appendChild(buttonsContainer);
 
+            // Attach event listener to submit button
+            const submitButton = document.querySelector('.submitButton');
+            submitButton.addEventListener('click', () => window.location.href = 'trackorder.html');
 
-                //Attach event listener to the submitOrderButton
-                const submitButton = document.querySelector('.submitButton');
-                submitButton.addEventListener('click', function () {
-                    // Retrieve cart data from localStorage
-                    const cartData = JSON.parse(localStorage.getItem('cart')) || [];
-
-                    // Log the cart data to the console (you can modify this part)
-                    console.log('Submitted Items:', cartData);
-
-                    // Store submitted orders in localStorage
-                    localStorage.setItem('submittedOrders', JSON.stringify(cartData));
-
-                    
-                });
-
-
-                
-            }
-
-            function updateDisplayForEmptyCart() {
-                const subtotalElement = document.querySelector('.subtotalBox .subtotalContent p:nth-child(1)');
-                const gstElement = document.querySelector('.subtotalBox .subtotalContent p:nth-child(2)');
-                const totalElement = document.querySelector('.subtotalBox .subtotalContent p:nth-child(3)');
-
-                subtotalElement.textContent = 'Subtotal: $0.00';
-                gstElement.textContent = 'GST: $0.00';
-                totalElement.textContent = 'Total: $0.00';
-            }
-
-            // Attach event listener to the backButton
-            const backButton = document.getElementById('backButton');
-            backButton.addEventListener('click', function() {
-                window.location.href = 'menu.html'; // Replace 'menu.html' with the actual path to your menu page
+            // Attach event listener to discard button
+            const discardButton = document.querySelector('.discardButton');
+            discardButton.addEventListener('click', () => {
+                cartData = [];
+                localStorage.setItem('cart', JSON.stringify(cartData));
+                renderCartItems();
             });
+        }
 
+        // Initial render of cart items
+        renderCartItems();
 
-
-           
-            
-    
-        });
-
-
-
-        
-
+        // Event listener for BACK button
+        const backButton = document.getElementById('backButton');
+        backButton.addEventListener('click', () => window.location.href = 'menu.html');
+    });
     </script>
-
     <!-- call waiter js -->
     <script src="waiterPopUp.js"></script>
-    
         
 </body>
 </html>
