@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="waiterPopUpStyle.css"> <!-- call waiter style -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -52,7 +53,16 @@
                 <li>Home</li>
                 <li id="menuButton">Menu</li>
             </ul>
-            <button class="callWaiterButton">Call Waiter</button>
+            <!-- call waiter pop up, calls showConfirmation function in waiterPopUp js then returns component values-->
+            <button class="callWaiterButton" onclick="showConfirmation()">Call Waiter</button>
+            <!-- The modal container with a unique ID (confirmationModal) and a modal content container -->
+            <div id="confirmationModal" class="modal">
+                <div class="modal-content" id="modalContent">
+                    <!-- Buttons inside the modal content, with click events for notifyWaiter and closeModal functions -->
+                    <button onclick="notifyWaiter()"></button>
+                    <button onclick="closeModal()"></button>
+                </div>
+            </div>
         </div>
 
         <div class="landingSection">
@@ -69,6 +79,7 @@
     </script>
     <!-- Include your languages.js script -->
     <script src="languages.js"></script>
+    <script src="waiterPopUp.js"></script>
     
 </body>
 </html>

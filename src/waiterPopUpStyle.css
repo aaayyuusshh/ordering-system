@@ -13,6 +13,7 @@
     width: 700px;
     height: 400px;
     text-align: center;
+    z-index: 1;
 }
 
 .modalText {
