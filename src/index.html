@@ -15,17 +15,22 @@
         <!-- TOP NAV -->
         <div class="topNavBarContainer">
             <ul class="topNavList">
-                <!-- <li>
-                    <div> 
-                        <select name="languages" id="languages">
-                            <option value="en">EN</option>
-                            <option value="fr">FR</option>
-                        </select>
-                    </div>   
-                </li> -->
-                <li>
-                    <div class="topNavListDiv"><p><a href="#">EN (plcehldr)</a></p></div>
+                
+                <li id="languageDropdown">
+                    <div class="topNavListDiv languageDropdownDiv">
+                        <p><span id="selectedLanguage">EN</span> <span class="triangle">&#9660;</span></p>
+                        <ul class="languageOptions">
+                            <li data-lang="EN">EN</li>
+                            <li data-lang="FR">FR</li>
+                            <li data-lang="ES">ES</li>
+                            <li data-lang="DE">DE</li>
+                            <li data-lang="IT">IT</li>
+                            <li data-lang="JA">JA</li>
+                            <li data-lang="KO">KO</li>
+                        </ul>
+                    </div>
                 </li>
+
                 <li>
                     <div class="topNavListDiv"><p><a href="#">TRACK ORDER</a></p></div>
                 </li>
@@ -58,7 +63,12 @@
         </div>
     </nav>
 
-   
+    <script>
+        // Get the selected language from local storage, passed throughout the pages
+        const storedLanguage = localStorage.getItem('selectedLanguage');
+    </script>
+    <!-- Include your languages.js script -->
+    <script src="languages.js"></script>
     
 </body>
 </html>

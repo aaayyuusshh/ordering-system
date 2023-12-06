@@ -20,8 +20,19 @@
     <nav class="navBar">
         <div class="topNavBarContainer">
             <ul class="topNavList">
-                <li>
-                    <div class="topNavListDiv"><p><a href="#">EN (plcehldr)</a></p></div>
+                <li id="languageDropdown">
+                    <div class="topNavListDiv languageDropdownDiv">
+                        <p><span id="selectedLanguage">EN</span> <span class="triangle">&#9660;</span></p>
+                        <ul class="languageOptions">
+                            <li data-lang="EN">EN</li>
+                            <li data-lang="FR">FR</li>
+                            <li data-lang="ES">ES</li>
+                            <li data-lang="DE">DE</li>
+                            <li data-lang="IT">IT</li>
+                            <li data-lang="JA">JA</li>
+                            <li data-lang="KO">KO</li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
                     <div class="topNavListDiv"><p><a href="#">TRACK ORDER</a></p></div>
@@ -135,6 +146,9 @@
 
    <!-- call waiter js -->
    <script src="waiterPopUp.js"></script>
+
+   <!-- languages js -->
+   <script src="languages.js"></script>
 
 
 </body>

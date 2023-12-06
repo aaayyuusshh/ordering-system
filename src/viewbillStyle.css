@@ -1,0 +1,42 @@
+.viewBillTitleContainer{
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.viewBillTitle {
+    font-size: 65px;
+}
+
+.viewBillDescription {
+    font-size: 20px;
+    margin: 7px 0px 0px 0;
+    color: rgb(48,48,48);
+}
+
+
+.orderItem {
+    list-style: none;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.itemDetails {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.itemQuantity,
+.itemName,
+.itemPrice,
+.totalPrice {
+    margin: 5px;
+}
+
+.itemPhoto {
+    width: 50px; /* Adjust the width as needed */
+    height: 50px; /* Adjust the height as needed */
+    margin-right: 10px;
+}

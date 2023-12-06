@@ -104,5 +104,44 @@ a {
 
 .secondarySlogan {
     font-size: 23px;
-    color: rgb(143, 143, 143);
 }
+
+.languageDropdownDiv {
+    position: relative;
+}
+  
+.languageOptions {
+    list-style-type:none;
+    margin: 0;
+    padding: 0;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: rgb(143, 143, 143, .8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+    width: 99%;
+  }
+  
+.languageOptions.show {
+    display: block;
+}
+  
+.languageOptions li {
+    padding: 10px;
+    cursor: pointer;
+    padding: 10px 40px;
+    margin-left: 0px;
+   
+}
+
+.languageOptions li:hover {
+    background-color: black;
+}
+
+.languageOptions li.selected {
+    background-color: rgb(175, 17, 17);
+    color: white;
+}
+

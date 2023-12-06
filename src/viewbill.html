@@ -7,45 +7,14 @@
     <link rel="stylesheet" href="cartStyles2.css">
     <link rel="stylesheet" href="menuStyles.css">
     <link rel="stylesheet" href="trackorderStyle.css">
+    <link rel="stylesheet" href="viewbillStyle.css">
     <link rel="stylesheet" href="waiterPopUpStyle.css"> <!-- call waiter style -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <title>ViewBill</title>
 
-    <script>
-        // Function to retrieve orders from localStorage and display them
-        function displayOrders() {
-            // Retrieve orders from localStorage
-            const orders = JSON.parse(localStorage.getItem('orders')) || [];
-
-            // Display orders in the track order container
-            const trackOrderContainer = document.getElementById('trackOrderContainer');
-            trackOrderContainer.innerHTML = '';
-
-            orders.forEach(order => {
-                const orderItem = document.createElement('li');
-                orderItem.classList.add('orderItem');
-                orderItem.innerHTML = `
-                    <div class="itemDetails">
-                        <p class="itemQuantity">${order.quantity}</p>
-                        <img src="${order.image}" alt="Item Photo" class="itemPhoto">
-                        <div class="itemInfo">
-                            <p class="itemName">${order.name}</p>
-                            <div class="stepper-wrapper">
-                                <!-- Progress bar or order status can be added here -->
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="separator">
-                `;
-                trackOrderContainer.appendChild(orderItem);
-            });
-        }
-
-        // Call displayOrders when the page loads
-        window.onload = displayOrders;
-    </script>
+   
 
 </head>
 
@@ -57,8 +26,19 @@
     <nav class="navBar">
         <div class="topNavBarContainer">
             <ul class="topNavList">
-                <li>
-                    <div class="topNavListDiv"><p><a href="#">EN (plcehldr)</a></p></div>
+                <li id="languageDropdown">
+                    <div class="topNavListDiv languageDropdownDiv">
+                        <p><span id="selectedLanguage">EN</span> <span class="triangle">&#9660;</span></p>
+                        <ul class="languageOptions">
+                            <li data-lang="EN">EN</li>
+                            <li data-lang="FR">FR</li>
+                            <li data-lang="ES">ES</li>
+                            <li data-lang="DE">DE</li>
+                            <li data-lang="IT">IT</li>
+                            <li data-lang="JA">JA</li>
+                            <li data-lang="KO">KO</li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
                     <div class="topNavListDiv"><p><a href="trackorder.html">TRACK ORDER</a></p></div>
@@ -92,17 +72,78 @@
     
     </div>
 
-    <div class="trackOrderTitleContainer">
-        <p class="trackOrderTitle">YOUR BILL</p>
-        <p class="trackOrderDescription">Review and settle your expenses with a clear breakdown of your order.</p>
+    <div class="viewBillTitleContainer">
+        <p class="viewBillTitle">Your Bill</p>
+        <p class="viewBillDescription">Review and settle your expenses with a clear breakdown of your order.</p>
     </div>
 
     <hr class="separator">
 
-    <div class="trackOrderContainer" id="trackOrderContainer">
+    <div class="viewBillContainer">
+        <ul class="orderList" id="dynamicOrderList">
+        </ul>
+    </div>
+
+
+     <!-- Modify your Track Order file to display submitted orders -->
+     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const trackOrderContainer = document.querySelector('.orderList');
+
+            // Assume you have the submitted items stored in localStorage with key 'submittedOrders'
+            const submittedOrders = JSON.parse(localStorage.getItem('submittedOrders')) || [];
+
+            submittedOrders.forEach((item, index) => {
+                const orderItem = document.createElement('li');
+                orderItem.className = 'orderItem';
+
+                let price = parseFloat(item.price.replace('$', ''));
+                let quantity = item.quantity;
+                let totalPrice = price * quantity;
+               
+
+
+                orderItem.innerHTML = `
+                    <div class="itemDetails">
+                        <p class="itemQuantity">${item.quantity}</p>
+                        <img src="${item.image}" alt="Item Photo" class="itemPhoto">
+                        <p class="itemName">${item.name}</p>
+                        <p class="itemPrice">${item.price}</p>
+                        <p class="totalPrice">$${totalPrice.toFixed(2)}</p>
+                        
+                    </div>
+                `;
+
+                trackOrderContainer.appendChild(orderItem);
+
+                
+            });
+        });
+
+
+         // Event listener for the "HOME" button
+        const homeButton = document.querySelector('.logoText');
+        homeButton1.addEventListener('click', function() {
+            window.location.href = 'index.html'; // Redirect to the menu page
+        });
+
+     
+
+
+ 
+</script>
+
     
+
+
+
+
+
     <!-- call waiter js -->
     <script src="waiterPopUp.js"></script>
+
+    <!-- languages js -->
+    <script src="languages.js"></script>
         
 </body>
 </html>
