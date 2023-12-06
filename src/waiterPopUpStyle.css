@@ -71,7 +71,17 @@
     height: auto;
     border-radius: 50%; 
     margin-bottom: 20px;
+    
 }
+
+.billIcon {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; 
+    margin-bottom: 20px;
+    
+}
+
 
 .callWaiterButton {
     cursor: pointer;
