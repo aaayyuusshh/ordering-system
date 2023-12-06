@@ -8,6 +8,7 @@
     justify-content: space-between;
     align-items: center;
     /* ... other styles ... */
+    margin-top: 5px;
 }
 
 .centeredContent {
@@ -155,15 +156,23 @@
     margin-top: 5px;
     padding: 4px 15px;;
     border-radius: 20px;
-    border: 0px solid white;
-    background-color: dimgray;
-    color: white;
+    border: 1px solid black;
+    font-weight: bold;
+    color: black;
     font-size: 20px;
     margin-left: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .backButton, .callWaiterButton {
     /* Ensure that buttons stay aligned to the top */
     align-self: flex-start;
     margin-top: 10px;
+}
+
+.menuIcon {
+    height: 38px;
+    width: 38px;
+    margin-left: 5px;
 }
