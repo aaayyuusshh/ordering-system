@@ -197,15 +197,18 @@
     
                 const discardButton = document.querySelector('.discardButton');
                 discardButton.addEventListener('click', () => {
-                    cartData = [];
-                    localStorage.setItem('cart', JSON.stringify(cartData));
-                    renderCartItems();
+                    const discardConfirmation = confirm("Are you sure you want to discard your order?");
+                    if (discardConfirmation) {
+                        cartData = [];
+                        localStorage.setItem('cart', JSON.stringify(cartData));
+                        renderCartItems();
+                    }
                 });
     
                 const submitButton = document.querySelector('.submitButton');
                 submitButton.addEventListener('click', function() {
-                    const userConfirmation = confirm("Are you sure you want to submit your order?");
-                    if (userConfirmation) {
+                    const submitConfirmation = confirm("Are you sure you want to submit your order?");
+                    if (submitConfirmation) {
                         const newOrders = JSON.parse(localStorage.getItem('cart')) || [];
                         const existingOrders = JSON.parse(localStorage.getItem('submittedOrders')) || [];
                         const updatedOrders = existingOrders.concat(newOrders);
