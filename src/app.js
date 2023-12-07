@@ -353,6 +353,12 @@ function setupDishClickListeners() {
     categoryButtons.forEach(button => {
         button.addEventListener('click', () => {
             currentCategory = button.textContent.trim();
+
+             // Check if the current category is "Drinks"
+             if (currentCategory === 'Drinks') {
+                // Show the pop-up message
+                alert("Upon ordering alcoholic drinks, waiters are notified and will be at your table to check ID.");
+            }
         });
     });
 
