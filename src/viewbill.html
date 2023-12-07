@@ -48,28 +48,28 @@
         </div>
     </nav>
 
-    <div class="bottomNavBarContainer">
-        <div class="homelogoContainer">
-            <img src="img/house.svg" width="30%" class="logoIcon" alt="House Icon">
-            <p class="logoText">HOME</p>
+    <div class="cartTitleContainer">
+        <div class="backButton">
+           MENU
+            <img src="https://cdn-icons-png.flaticon.com/512/3570/3570168.png" class="menuIcon" alt="">
+        </div> 
+        
+        <div class="centeredContent">
+            <p class="ourCartTitle">Your Bill</p>
+            <p class="cartDescription">Review and settle your expenses with a clear breakdown of your order.</p>
         </div>
-
-        <!-- call waiter pop up, calls showConfirmation function in waiterPopUp js then returns component values-->
+        
+        
         <button class="callWaiterButton" onclick="showConfirmation()">Call Waiter</button>
-        <!-- The modal container with a unique ID (confirmationModal) and a modal content container -->
+    
+        <!-- Modal for Call Waiter -->
         <div id="confirmationModal" class="modal">
             <div class="modal-content" id="modalContent">
-                <!-- Buttons inside the modal content, with click events for notifyWaiter and closeModal functions -->
                 <button onclick="notifyWaiter()"></button>
                 <button onclick="closeModal()"></button>
             </div>
         </div>
-    
-    </div>
-
-    <div class="viewBillTitleContainer">
-        <p class="viewBillTitle">Your Bill</p>
-        <p class="viewBillDescription">Review and settle your expenses with a clear breakdown of your order.</p>
+        
     </div>
 
     <hr class="separator">
@@ -157,9 +157,9 @@
 
     
         // Event listener for the "HOME" button
-        const homeButton = document.querySelector('.logoText');
+        const homeButton = document.querySelector('.backButton');
         homeButton.addEventListener('click', function() {
-            window.location.href = 'index.html'; // Redirect to the menu page
+            window.location.href = 'menu.html'; // Redirect to the menu page
         });
         
     </script>
