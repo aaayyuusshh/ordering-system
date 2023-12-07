@@ -114,7 +114,183 @@ const dishes = [
         image: "https://www.indianveggiedelight.com/wp-content/uploads/2022/04/air-fryer-tofu-1152x1536.jpg",
         name: "Crispy Tofu Bites",
         description: "Crispy fried tofu bites with a sweet and spicy dipping sauce."
-    }
+    },
+
+    //chicken
+    {
+        category: "Chicken",
+        price: "$11.99",
+        image: "https://hips.hearstapps.com/hmg-prod/images/spicy-crab-rolls4-1654808938.jpg?crop=0.668xw:1.00xh;0.167xw,0&resize=980:*",
+        name: "Sushi Rolls",
+        description: "Assorted sushi rolls with fresh fish, avocado, and rice, served with soy sauce."
+    },
+    {
+        category: "Chicken",
+        price: "$9.99",
+        image: "https://www.eatyourselfskinny.com/wp-content/uploads/2023/08/chicken-skewers-5-1024x1536.jpg",
+        name: "Chicken Satay",
+        description: "Grilled chicken skewers served with a flavorful peanut sauce."
+    },
+    {
+        category: "Chicken",
+        price: "$8.99",
+        image: "https://www.sugarsaltmagic.com/wp-content/uploads/2023/01/Chinese-Spring-Rolls-4FEAT-500x500.jpg",
+        name: "Spring Rolls",
+        description: "Crispy rolls filled with vegetables, served with a sweet dipping sauce."
+    }, 
+    {
+        category: "Chicken",
+        price: "$9.99",
+        image: "https://cardamommagazine.com/wp-content/uploads/2021/04/chicken-gyoza.jpg",
+        name: "Gyoza",
+        description: "Pan-fried Japanese dumplings filled with a savory mixture of pork and vegetables."
+    },
+    {
+        category: "Chicken",
+        price: "$10.99",
+        image: "https://twosleevers.com/wp-content/uploads/2023/03/Shrimp-Tempura-1-900x900.png",
+        name: "Shrimp Tempura",
+        description: "Crispy shrimp tempura served with a light dipping sauce."
+    },
+    {
+        category: "Chicken",
+        price: "$8.49",
+        image: "https://www.feastingathome.com/wp-content/uploads/2022/01/Miso-Soup-18.jpg",
+        name: "Miso Soup",
+        description: "Traditional Japanese soup made with fermented soybean paste, tofu, and seaweed."
+    },
+    {
+        category: "Chicken",
+        price: "$7.99",
+        image: "https://masalaeatsmiami.files.wordpress.com/2013/09/edamame-copy.jpg?w=1024&h=680",
+        name: "Edamame",
+        description: "Steamed soybeans sprinkled with sea salt, a classic appetizer."
+    },
+    {
+        category: "Chicken",
+        price: "$10.99",
+        image: "https://www.indianveggiedelight.com/wp-content/uploads/2022/04/air-fryer-tofu-1152x1536.jpg",
+        name: "Crispy Tofu Bites",
+        description: "Crispy fried tofu bites with a sweet and spicy dipping sauce."
+    },
+
+    //Beef
+    {
+        category: "Beef",
+        price: "$11.99",
+        image: "https://hips.hearstapps.com/hmg-prod/images/spicy-crab-rolls4-1654808938.jpg?crop=0.668xw:1.00xh;0.167xw,0&resize=980:*",
+        name: "Sushi Rolls",
+        description: "Assorted sushi rolls with fresh fish, avocado, and rice, served with soy sauce."
+    },
+    {
+        category: "Beef",
+        price: "$9.99",
+        image: "https://www.eatyourselfskinny.com/wp-content/uploads/2023/08/chicken-skewers-5-1024x1536.jpg",
+        name: "Chicken Satay",
+        description: "Grilled chicken skewers served with a flavorful peanut sauce."
+    },
+    {
+        category: "Beef",
+        price: "$8.99",
+        image: "https://www.sugarsaltmagic.com/wp-content/uploads/2023/01/Chinese-Spring-Rolls-4FEAT-500x500.jpg",
+        name: "Spring Rolls",
+        description: "Crispy rolls filled with vegetables, served with a sweet dipping sauce."
+    }, 
+    {
+        category: "Beef",
+        price: "$9.99",
+        image: "https://cardamommagazine.com/wp-content/uploads/2021/04/chicken-gyoza.jpg",
+        name: "Gyoza",
+        description: "Pan-fried Japanese dumplings filled with a savory mixture of pork and vegetables."
+    },
+    {
+        category: "Beef",
+        price: "$10.99",
+        image: "https://twosleevers.com/wp-content/uploads/2023/03/Shrimp-Tempura-1-900x900.png",
+        name: "Shrimp Tempura",
+        description: "Crispy shrimp tempura served with a light dipping sauce."
+    },
+    {
+        category: "Beef",
+        price: "$8.49",
+        image: "https://www.feastingathome.com/wp-content/uploads/2022/01/Miso-Soup-18.jpg",
+        name: "Miso Soup",
+        description: "Traditional Japanese soup made with fermented soybean paste, tofu, and seaweed."
+    },
+    {
+        category: "Beef",
+        price: "$7.99",
+        image: "https://masalaeatsmiami.files.wordpress.com/2013/09/edamame-copy.jpg?w=1024&h=680",
+        name: "Edamame",
+        description: "Steamed soybeans sprinkled with sea salt, a classic appetizer."
+    },
+    {
+        category: "Beef",
+        price: "$10.99",
+        image: "https://www.indianveggiedelight.com/wp-content/uploads/2022/04/air-fryer-tofu-1152x1536.jpg",
+        name: "Crispy Tofu Bites",
+        description: "Crispy fried tofu bites with a sweet and spicy dipping sauce."
+    },
+
+    //drinks
+    {
+        category: "Drinks",
+        price: "$11.99",
+        image: "https://bakewithshivesh.com/wp-content/uploads/2022/04/IMG_9331-scaled.jpg",
+        name: "Thai Vodka Cocktail",
+        description: "A refreshing blend of Thai flavors and vodka, perfect for a tropical experience."
+    },
+    {
+        category: "Drinks",
+        price: "$9.99",
+        image: "https://www.acouplecooks.com/wp-content/uploads/2020/12/Crown-and-Coke-002s.jpg",
+        name: "Crown & Coke",
+        description: "Classic combination of Crown Royal whisky and cola, a timeless favorite."
+    },
+    {
+        category: "Drinks",
+        price: "$8.99",
+        image: "https://images.ctfassets.net/cnu0m8re1exe/3FREnSA5uoZBL9JD8Z9Vl8/9aae77b21629e9cfcbba1c4b39db6f89/shutterstock_1726203082.jpg?fm=jpg&fl=progressive&w=660&h=433&fit=fill",
+        name: "Jamieson Rum",
+        description: "Smooth and flavorful Jamieson Rum, perfect for sipping or mixing."
+    }, 
+    {
+        category: "Drinks",
+        price: "$9.99",
+        image: "https://hips.hearstapps.com/hmg-prod/images/martini-recipe-1657532229.jpg?crop=1.00xw:0.501xh;0,0.159xh&resize=1200:*",
+        name: "Indo-Martini",
+        description: "An exotic twist on the classic martini with Indo-inspired flavors."
+    },
+    {
+        category: "Drinks",
+        price: "$10.99",
+        image: "https://www.brewer-world.com/wp-content/uploads/2021/04/real-ale-header.jpg",
+        name: "Korean Ale",
+        description: "A unique blend of Korean flavors in a craft ale, perfect for beer enthusiasts."
+    },
+    {
+        category: "Drinks",
+        price: "$8.49",
+        image: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2011/4/25/0/CCWM_Pina-Colada-2_s3x4.jpg.rend.hgtvcom.1280.1280.suffix/1562077390568.jpeg",
+        name: "Pina Colada",
+        description: "A tropical delight with coconut and pineapple, a classic cocktail choice."
+    },
+    {
+        category: "Drinks",
+        price: "$7.99",
+        image: "https://www.liquor.com/thmb/WjUD7EuXuhZ98tfYtOjdfmuA-y4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Strawberry_Daquiri_1800x1800_primary-63c25c677616479da2d08767b3b4ee8a.jpg",
+        name: "Daiquiri",
+        description: "A fruity and refreshing daiquiri, perfect for a light and zesty sip."
+    },
+    {
+        category: "Drinks",
+        price: "$10.99",
+        image: "https://hips.hearstapps.com/hmg-prod/images/drinks-to-avoid-1621959532.jpg",
+        name: "Hurricane",
+        description: "A vibrant and tropical hurricane cocktail, sure to add a splash to your evening."
+    },
+
+
 ]
 
 let dishCategoryButtons = document.querySelectorAll(".dishCategoryButton");
@@ -197,7 +373,7 @@ function setupDishClickListeners() {
 }
 
 function getIndexOffset(category) {
-    const categoryOrder = ['Popular', 'Appetizers', /* other categories... */];
+    const categoryOrder = ['Popular', 'Appetizers', 'Chicken', 'Beef', 'Drinks'];
     let offset = 0;
 
     for (let i = 0; i < categoryOrder.indexOf(category); i++) {
