@@ -1,6 +1,6 @@
 # CPSC 481 - T04-2 Ordering System
-### Angelica Ann Eugenio
 ### Aayush Dahal
+### Angelica Ann Eugenio
 ### Josemaria Felicio
 ### Raiyan Kabir
 
