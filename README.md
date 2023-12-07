@@ -1,8 +1,8 @@
 # CPSC 481 - T04-2 Ordering System
-## Angelica Ann Eugenio
-## Aayush Dahal
-## Josemaria Felicio
-## Raiyan Kabir
+### Angelica Ann Eugenio
+### Aayush Dahal
+### Josemaria Felicio
+### Raiyan Kabir
 
 # Instructions for Asian Fusion Ordering System
 
