@@ -1,8 +1,10 @@
 # CPSC 481 - T04-2 Ordering System
-### Aayush Dahal
-### Angelica Ann Eugenio
-### Josemaria Felicio
-### Raiyan Kabir
+## Team
+
+* Angelica Ann Eugenio
+* Aayush Dahal
+* Josemaria Felicio
+* Raiyan Kabir
 
 # Instructions for Asian Fusion Ordering System
 
@@ -12,6 +14,7 @@ Welcome to the Asian Fusion Ordering System. Follow these steps to navigate and 
 ### Accessing the System
 1. **Launch**: Open index.html using a live server
 2. **Homepage**: You will be greeted with a homepage click on "MENU" to browse the various categories of our menu.
+3. Application Screen Dimensions: 1440 x 900, accomodating for a restaurant tablet
 
 ### Browsing the Menu
 1. **View Categories**: Select from categories like Popular, Appetizers, Chicken, Beef, and Drinks.
