@@ -278,7 +278,7 @@ const dishes = [
     {
         category: "Drinks",
         price: "$7.99",
-        image: "https://www.liquor.com/thmb/WjUD7EuXuhZ98tfYtOjdfmuA-y4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Strawberry_Daquiri_1800x1800_primary-63c25c677616479da2d08767b3b4ee8a.jpg",
+        image: "https://www.recipetineats.com/wp-content/uploads/2019/09/Frozen-Strawberry-Daiquiri_1.jpg",
         name: "Daiquiri",
         description: "A fruity and refreshing daiquiri, perfect for a light and zesty sip."
     },
