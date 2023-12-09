@@ -432,13 +432,13 @@ topNavListDiv.forEach(item => {
         localStorage.setItem("selectedItemId", item.id);
 
         if(item.classList.contains("trackOrderButton")) {
-            window.location.href = 'trackOrder.html'; 
+            window.location.href = 'trackorder.html'; 
         }
         else if(item.classList.contains("viewCartButtonz")) {
             window.location.href = 'cart.html'; 
         }
         else if(item.classList.contains("viewBillButton")) {
-            window.location.href = 'viewBill.html'; 
+            window.location.href = 'viewbill.html'; 
         }
     })
 });
